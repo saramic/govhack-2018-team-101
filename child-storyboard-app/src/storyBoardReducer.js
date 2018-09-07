@@ -1,4 +1,11 @@
 const defaultState = {
+  newStories: [ // TODO this is the thing that needs to be auto generated
+    'Park bench',
+    'Train Station',
+    'Park',
+    'Someone speaking Italian',
+    'It started to rain',
+  ],
   stories: [
     'I start at my school Collingwood College',
     'I decide to go to the near by park',

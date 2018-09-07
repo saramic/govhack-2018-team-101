@@ -6,6 +6,22 @@ import './index.css';
 import storyBoardReducer from './storyBoardReducer';
 import registerServiceWorker from './registerServiceWorker';
 
+class StoryBuilder extends Component {
+  render() {
+    return (
+      <div className="StoryBuilder">
+        <h2>And then ...</h2>
+        <ul>
+          {this.props.newStories.map((newStory) => {
+              return (<li>{newStory}</li>)
+            }
+          )}
+        </ul>
+      </div>
+    )
+  }
+}
+
 class StoryBoard extends Component {
   render() {
     return (
@@ -14,7 +30,6 @@ class StoryBoard extends Component {
         <ul>
           {this.props.stories.map((story) => {
               return (<li>{story}</li>)
-
             }
           )}
         </ul>
@@ -27,8 +42,15 @@ class StoryBoardApp extends Component {
   render() {
     return (
       <div className="StoryBoardApp">
+        <h2>The Story of Matilda</h2>
+        <p>
+          A grade 6 school girl from Collingwood College using open data to explore her community
+          and build a story
+        </p>
+        <StoryBuilder
+          newStories={this.props.newStories} />
         <StoryBoard
-          stories={this.props.stories}/>
+          stories={this.props.stories} />
       </div>
     );
   }

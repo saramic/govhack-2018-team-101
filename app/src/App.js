@@ -8,7 +8,7 @@ const App = (props) =>
 
 const Story = (props) =>
     <div className="story">
-        Story
+        A Story About {props.location}...
         {props.story.facts.map(fact => <Fact fact={fact} />)}
     </div>;
 

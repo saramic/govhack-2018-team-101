@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const data = {
     story: {
-        label: "Kingston",
+        location: "Kingston",
         facts: [
             {
                 label: "It's great",

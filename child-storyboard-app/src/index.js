@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import {connect, Provider} from 'react-redux';
 import './index.css';
+import newStoryAction from './newStoryAction';
 import storyBoardReducer from './storyBoardReducer';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -20,8 +21,7 @@ class StoryBuilder extends Component {
   }
 
   handleSubmit(event) {
-    console.log('new story: ' + this.state.newStory);
-    this.props.addStory(this);
+    this.props.addStory(this.state.newStory);
     event.preventDefault();
   }
 
@@ -64,10 +64,9 @@ class StoryBoard extends Component {
 }
 
 class StoryBoardApp extends Component {
-  handleClick(story) {
-    const stories = this.props.stories.slice();
-    console.log(story)
-    // console.log(stories)
+  addStory(story) {
+    const stories = this.props.stories.concat(story);
+    this.props.dispatch(newStoryAction(stories));
   }
 
   render() {
@@ -80,7 +79,7 @@ class StoryBoardApp extends Component {
         </p>
         <StoryBuilder
           newStories={this.props.newStories}
-          addStory={(story) => this.handleClick(story)}/>
+          addStory={(story) => this.addStory(story)}/>
         <StoryBoard
           stories={this.props.stories}/>
       </div>

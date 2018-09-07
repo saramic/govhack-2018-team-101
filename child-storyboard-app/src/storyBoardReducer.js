@@ -16,6 +16,11 @@ const defaultState = {
 };
 
 const storyBoardReducer = (state = defaultState, action) => {
+  if (action.type === 'ADD_STORY') {
+    return Object.assign({}, state, {
+      stories: action.stories,
+    });
+  }
   return state;
 };
 

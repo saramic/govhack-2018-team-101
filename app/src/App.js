@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import {Grid, Row, Col} from 'react-bootstrap';
 import './App.css';
 
 const App = (props) =>
-    <div className="App">
-        <Story story={props.data.story} />
-    </div>;
+    <Grid className="App">
+        <Row>
+            <Col md={8} mdOffset={2}>
+                <Story story={props.data.story} />
+            </Col>
+        </Row>
+    </Grid>;
 
 const Story = (props) =>
     <div className="story">

@@ -7,6 +7,24 @@ import storyBoardReducer from './storyBoardReducer';
 import registerServiceWorker from './registerServiceWorker';
 
 class StoryBuilder extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {newStory: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({newStory: event.target.value});
+  }
+
+  handleSubmit(event) {
+    console.log('new story: ' + this.state.newStory);
+    this.props.addStory(this);
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="StoryBuilder">
@@ -17,6 +35,13 @@ class StoryBuilder extends Component {
             }
           )}
         </ul>
+        <i>choose next story point above and write a sentence about it</i>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" class="newStoryInput" value={this.state.newStory} onChange={this.handleChange}/>
+            <input type="submit" value="add to story"/>
+          </form>
+        </div>
       </div>
     )
   }
@@ -39,6 +64,12 @@ class StoryBoard extends Component {
 }
 
 class StoryBoardApp extends Component {
+  handleClick(story) {
+    const stories = this.props.stories.slice();
+    console.log(story)
+    // console.log(stories)
+  }
+
   render() {
     return (
       <div className="StoryBoardApp">
@@ -48,9 +79,10 @@ class StoryBoardApp extends Component {
           and build a story
         </p>
         <StoryBuilder
-          newStories={this.props.newStories} />
+          newStories={this.props.newStories}
+          addStory={(story) => this.handleClick(story)}/>
         <StoryBoard
-          stories={this.props.stories} />
+          stories={this.props.stories}/>
       </div>
     );
   }

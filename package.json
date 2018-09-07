@@ -1,0 +1,21 @@
+{
+  "name": "govhack-2018-team-101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd child-storyboard-app/ && npm start ",
+    "heroku-postbuild": "cd child-storyboard-app/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saramic/govhack-2018-team-101.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saramic/govhack-2018-team-101/issues"
+  },
+  "homepage": "https://github.com/saramic/govhack-2018-team-101#readme"
+}

@@ -31,7 +31,7 @@ class StoryBuilder extends Component {
         <h2>And then ...</h2>
         <ul>
           {this.props.newStories.map((newStory) => {
-              return (<li>{newStory}</li>)
+              return (<li key={newStory.id}>{newStory.text}</li>)
             }
           )}
         </ul>
@@ -54,7 +54,7 @@ class StoryBoard extends Component {
         <h2>The story so far</h2>
         <ul>
           {this.props.stories.map((story) => {
-              return (<li>{story}</li>)
+              return (<li key={story.id}>{story.text}</li>)
             }
           )}
         </ul>
@@ -65,8 +65,7 @@ class StoryBoard extends Component {
 
 class StoryBoardApp extends Component {
   addStory(story) {
-    const stories = this.props.stories.concat(story);
-    this.props.dispatch(newStoryAction(stories));
+    this.props.dispatch(newStoryAction(story));
   }
 
   render() {

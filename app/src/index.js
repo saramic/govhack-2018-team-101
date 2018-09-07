@@ -1,35 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux';
+import {Provider, connect} from 'react-redux';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import reducer from './rootReducer'
+import App from './App'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-const data = {
-    story: {
-        location: "Kingston",
-        facts: [
-            {
-                label: "It's great",
-                dataSource: "http://data.gov.au",
-            },
-            {
-                label: "It's okay...",
-                dataSource: "http://data.vic.gov.au",
-            },
-            {
-                label: "It is a council (I think?)",
-                dataSource: "http://kingston.gov.au",
-            },
-            {
-                label: "There are people there",
-                dataSource: "http://google.com",
-            },
-        ]
-    }
-};
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-ReactDOM.render(<App data={data}/>, document.getElementById('root'));
+store.subscribe(() => {
+    console.log(store.getState())
+});
+
+const ConnectedApp = connect(state => state)(App);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedApp />
+    </Provider>,
+    document.getElementById('root'));
+
 registerServiceWorker();

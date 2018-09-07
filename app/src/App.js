@@ -1,41 +1,13 @@
-import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
-import './App.css';
-
-const App = (props) =>
-    <Grid className="App">
-        <Row>
-            <Col md={8} mdOffset={2}>
-                <Story story={props.data.story} />
-            </Col>
-        </Row>
-    </Grid>;
-
-const Story = (props) =>
-    <div className="story">
-        A Story About {props.location}...
-        {props.story.facts.map(fact => <Fact fact={fact} />)}
-    </div>;
-
-const Fact = (props) =>
-    <div className="fact">
-        Fact: {props.fact.label}
-        <DataSource dataSource={props.fact.dataSource} />
-    </div>;
+import React from 'react';
+import ViewStoryApp from "./ViewStoryApp";
+import BuildStoryApp from "./BuildStoryApp";
 
 /**
- * This component should be hidden to start with. When the user interacts with the fact in some way, we should then
- * allow them to explore the data set the source came from. Some examples of how this may work could include:
- *  - Embed Tableau visualisations of the data source.
- *  - Link directly to the data source.
- *  - Explain the license of the data source.
- * @param props
- * @returns {*}
- * @constructor
+ * Decides whether to show the story builder or the story itself, based on the "screen" property in our store.
  */
-const DataSource = (props) =>
-    <div className="data-source">
-        Source: {props.dataSource}
+const App = (props) =>
+    <div className="App">
+        {props.screen === "view-story" ? <ViewStoryApp {...props.viewStory} /> : <BuildStoryApp {...props.buildStory} />}
     </div>;
 
 export default App;

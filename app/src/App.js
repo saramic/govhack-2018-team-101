@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import Home from "./pages/Home";
 
 const ConnectedViewStoryApp = connect(
-  state => state.viewStory,
+  state => state,
   {
     onShowProposedStoryPanel: actions.showProposedStoryPanel
   }

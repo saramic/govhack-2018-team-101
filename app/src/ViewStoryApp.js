@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Row, Col} from 'antd';
 import AddStoryPanel from './components/AddStoryPanel';
+import * as actions from "./actions";
 
 const ViewStoryApp = (props) =>
     <div className="App">
@@ -9,7 +10,7 @@ const ViewStoryApp = (props) =>
         <button onClick={props.onShowProposedStoryPanel}>Add to story</button>
     </div>;
 
-const Story = ({storyElements, character, location, storyPanels}) => {
+const Story = ({storyElements, character, location, storyPanels, proposedStoryAddition, onShowProposedStoryPanel, onAcceptProposedStoryPanel, onRejectProposedStoryPanel}) => {
 
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
@@ -53,9 +54,10 @@ const Story = ({storyElements, character, location, storyPanels}) => {
 
             <Col span={3}>
                 <AddStoryPanel
-                    proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}}
-                    onDeclineStory={() => {}}
-                    onAcceptStory={(customText = null, stickers = null) => {}}/>
+                    proposedStoryAddition={proposedStoryAddition}
+                    onShowProposedStoryPanel={onShowProposedStoryPanel}
+                    onRejectProposedStoryPanel={onRejectProposedStoryPanel}
+                    onAcceptProposedStoryPanel={(customText = null, stickers = null) => onAcceptProposedStoryPanel()}/>
             </Col>
         </Row>
     </div>

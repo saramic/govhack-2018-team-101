@@ -4,7 +4,7 @@ import React from "react";
 import "../Story.css";
 import CardDataSource from "./CardDataSource";
 
-const Card = ({ visible, data, closeModal }) => {
+const Card = ({ visible, data, closeModal, onAcceptProposedStoryPanel }) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
@@ -19,7 +19,7 @@ const Card = ({ visible, data, closeModal }) => {
 
           <CardDataSource />
 
-          <Button onClick={closeModal}>Submit</Button>
+          <Button onClick={onAcceptProposedStoryPanel}>Submit</Button>
         </div>
       </div>
     </div>
@@ -27,17 +27,10 @@ const Card = ({ visible, data, closeModal }) => {
 };
 
 export default class AddStoryPanel extends Component {
-  state = { visible: true, frontShown: true };
-
-  showForm = () => {
-    this.setState({
-      visible: true
-    });
-  };
+  state = { frontShown: true };
 
   hideForm = () => {
     this.setState({
-      visible: false,
       frontShown: true
     });
   };
@@ -47,7 +40,7 @@ export default class AddStoryPanel extends Component {
   };
 
   showNextStory = () => {
-    console.log("SHOW NEXT STORY IN QUEUE");
+    this.props.onRejectProposedStoryPanel();
   };
 
   render = () => {
@@ -57,7 +50,7 @@ export default class AddStoryPanel extends Component {
           href="#"
           onClick={e => {
             e.preventDefault();
-            this.showForm();
+            this.props.onShowProposedStoryPanel();
           }}
         >
           <div className="content">
@@ -67,12 +60,12 @@ export default class AddStoryPanel extends Component {
         </a>
         <Modal
           title={null}
-          visible={this.state.visible}
+          visible={this.props.proposedStoryAddition != null}
           onOk={this.hideForm}
           onCancel={this.hideForm}
           footer={null}
         >
-          <Card visible={this.state.frontShown} closeModal={this.hideForm} />
+          <Card visible={this.state.frontShown} closeModal={this.hideForm} onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel} />
 
           {this.state.frontShown ? (
             <div>

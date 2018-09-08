@@ -50,6 +50,12 @@ const storyElements = {
           id: "sport-recreation",
           "segue": "You choose to go and play soccer",
         },
+
+        // Dummy segue for testing...
+        {
+          id: "recycling",
+          "segue": "Suddenly, you notice some rubbish on the ground",
+        },
       ]
     },
     {
@@ -83,6 +89,16 @@ const storyElements = {
         {
           id: "aging",
           "segue": "as you put the recycling away you see an elderly gentleman feeding the ducks"
+        },
+
+        // Dummy segues for testing...
+        {
+          id: "graffiti",
+          "segue": "There is some graffiti on the wall...",
+        },
+        {
+          id: "multiculturalism",
+          "segue": "And notice some great international artwork on the wall...",
         },
       ]
     },

@@ -1,15 +1,19 @@
 // 8 cards
 // 1) School - Michael
-//    I was at school and I saw a soccer ball which took me to the local park
+//    I am at school
+//
 // 3) sport recreation - Selena
-//    At the local park I saw people playing various sports
+//    segue - I to play soccer at the local park
+//    I am at the local park and I see
+//
 // 4) recycling - Adam
+//    segue -
 //    I saw some rubbish so I picked it up and put it into recycling
 //
 // 6) Aging young vs old - Adam
 //    An elderly gentleman thanked me with an italian accent
 //
-// *) Reject - Selena
+// *) Reject Graffiti - Selena
 // *) Reject - Selena
 //
 // 2) multiculturalism - Michael
@@ -24,7 +28,24 @@
 const storyElements = {
   storyElements: [
     {
-      id: "italian-soccer",
+      id: "school",
+      template: "You are at Parkdale Primary School",
+      image: "http://www.parkdaleps.vic.edu.au/uploaded_files/media/gallery/parkdale_primary_201527_crop.jpg",
+      dataSource: {
+        name: 'School Locations',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/295',
+        link: 'https://www.data.vic.gov.au/data/dataset/school-locations-2018',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          "element": "sport-recreation",
+          "segue": "You choose to go and play soccer",
+        },
+      ]
+    },
+    {
+      id: "sport-recreation",
       template: "[NAME] was walking past a soccer field, and saw people speaking Italian...",
       image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
       dataSource: {

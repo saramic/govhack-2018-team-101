@@ -18,13 +18,17 @@
 //    An elderly gentleman thanked me with an italian accent
 //
 // *) Reject Graffiti - Selena
-// *) Reject - Selena
+//    Crime stats https://2018.hackerspace.govhack.org/data_sets/300
+
+// *) Reject Trees - Michael
 //
 // 2) multiculturalism - Michael
 //    Italians came on the boats in 1940's data
+//
 // 7) Gender equality - Michael
 //
 // 5) profession - Selena
+//    Fire Fighters have an 8.6% projected growth in next 5 years in Australia
 //
 // 8) Indiginous - Adam
 //
@@ -67,27 +71,6 @@ const storyElements = {
     },
     {
       id: "recycling",
-      template: "[NAME] ",
-      image: "",
-      dataSource: {
-        name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
-        visualisation: 'N/A',
-      },
-      nextElements: [
-        {
-          "element": "carlton-gardens",
-          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
-        },
-        {
-          "element": "soccer-fields",
-          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
-        }
-      ]
-    },
-    {
-      id: "recycling",
       template: "You spot some soft drink cans on the ground, so you pick them up and throw them into a recycling bin nearby. You learnt at school that each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km in your family car!",
       image: "",
       dataSource: {
@@ -107,5 +90,117 @@ const storyElements = {
         }
       ]
     },
+    {
+      id: "aging",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "graffiti",
+          segue: ""
+        },
+        {
+          element: "trees",
+          segue: ""
+        },
+        {
+          element: "multiculturalism",
+          segue: ""
+        },
+      ]
+    },
+    {
+      id: "graffiti",
+      template: "I want to be artistic and graffiti a mural",
+      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjPxMK4h6vdAhWPbN4KHRu-AHkQjRx6BAgBEAU&url=https%3A%2F%2Fwww.thefactsite.com%2F2017%2F10%2Fgraffiti-facts.html&psig=AOvVaw3z7IGWQEHmRc1sxchH1Ys1&ust=1536484065468492",
+      dataSource: {
+          name: 'Crime Stats Agency',
+          hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/300',
+          link: 'https://www.crimestatistics.vic.gov.au/crime-statistics/latest-crime-data',
+          visualisation: 'N/A',
+      },
+      nextElements: [],
+    },
+    {
+      id: "trees",
+      template: "I want to be artistic and graffiti a mural",
+      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjPxMK4h6vdAhWPbN4KHRu-AHkQjRx6BAgBEAU&url=https%3A%2F%2Fwww.thefactsite.com%2F2017%2F10%2Fgraffiti-facts.html&psig=AOvVaw3z7IGWQEHmRc1sxchH1Ys1&ust=1536484065468492",
+      dataSource: {
+          name: 'Melbourne Urban Forest Visual',
+          hackerspace_id: '',
+          link: 'https://data.melbourne.vic.gov.au/',
+          visualisation: 'N/A',
+      },
+      nextElements: [],
+    },
+    {
+      id: "multiculturalism",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "gender-equality",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "gender-equality",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "profession",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "profession",
+      template: "I want to be a fire fighter when I grow up",
+      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiJ9JOR_ardAhWUAIgKHYRQBtEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.theodysseyonline.com%2Fgrowing-child-firefighter&psig=AOvVaw2-SvawR0ft-9X6tLproWEp&ust=1536481321904516",
+      dataSource: {
+          name: 'Employment projections',
+          hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/116',
+          link: 'http://lmip.gov.au/default.aspx?LMIP/GainInsights/EmploymentProjections',
+          visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "indigenous",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "indigenous",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [],
+    }
   ]
 };

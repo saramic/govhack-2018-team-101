@@ -31,7 +31,7 @@ const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
 };
 
 export default class AddStoryPanel extends Component {
-  state = { visible: false, frontShown: true };
+  state = { visible: true, frontShown: true };
 
   showForm = () => {
     this.setState({
@@ -87,14 +87,16 @@ export default class AddStoryPanel extends Component {
           {this.state.frontShown ? (
             <div>
               <Button
-                className="card__button--right"
+                htmlType="a"
+                className="card__button--right btn btn-accept"
                 type="primary"
                 shape="circle"
                 icon="check"
                 onClick={this.showCardFront}
               />
               <Button
-                className="card__button--left"
+                htmlType="a"
+                className="card__button--left btn btn-reject"
                 type="primary"
                 shape="circle"
                 icon="close"

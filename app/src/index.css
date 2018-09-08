@@ -25,6 +25,9 @@ h1 {
   width: 100%;
 }
 
+/**
+ * Comic book texture around the border from https://codepen.io/jjelizondo/pen/imDzk.
+ */
 .story-panel, .story-modal .ant-modal-content {
   border: 0.2em solid transparent;
   border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 27 27 27 round stretch;
@@ -155,6 +158,37 @@ h1 {
 }
 
 
+/**
+ * Modal dialog for appending to story.
+ */
+
 .story-modal .ant-modal-content {
   border-radius: 0;
+}
+
+.story-modal .btn-accept {
+  background-color: green;
+  border-color: #006700;
+}
+
+.story-modal .btn-accept:hover {
+  background-color: #00d000;
+  border-color: green;
+}
+
+.story-modal .btn-reject {
+  background-color: orange;
+  border-color: #d98c00;
+}
+
+.story-modal .btn-reject:hover {
+  background-color: #ffc749;
+  border-color: orange;
+}
+
+.story-modal .btn-accept, .story-modal .btn-reject {
+  width: 64px;
+  height: 64px;
+  font-size: 22pt;
+  border-width: 3px;
 }

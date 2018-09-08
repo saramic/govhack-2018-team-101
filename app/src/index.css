@@ -203,3 +203,18 @@ h1 {
 .story-modal .ant-modal-body {
   padding: 0;
 }
+
+.story-modal .ant-modal-close {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: white;
+  border: solid 1px lightgrey;
+  top: 12px;
+  right: 12px;
+}
+
+.story-modal .ant-modal-close-x {
+  display: inline;
+  line-height: 0;
+}

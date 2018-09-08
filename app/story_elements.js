@@ -18,10 +18,11 @@
 //    An elderly gentleman thanked me with an italian accent
 //
 // *) Reject Graffiti - Selena
-// *) Reject - Selena
+// *) Reject crime - Michael
 //
 // 2) multiculturalism - Michael
 //    Italians came on the boats in 1940's data
+//
 // 7) Gender equality - Michael
 //
 // 5) profession - Selena
@@ -98,14 +99,103 @@ const storyElements = {
       },
       nextElements: [
         {
-          "element": "carlton-gardens",
-          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
-        },
-        {
-          "element": "soccer-fields",
-          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
+          element: "aging",
+          segue: ""
         }
       ]
+    },
+    {
+      id: "aging",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "graffiti",
+          segue: ""
+        },
+        {
+          element: "crime",
+          segue: ""
+        },
+        {
+          element: "multiculturalism",
+          segue: ""
+        },
+      ]
+    },
+    {
+      id: "multiculturalism",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "gender-equality",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "gender-equality",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "profession",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "profession",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "indigenous",
+          segue: ""
+        },
+      ],
+    },
+    {
+      id: "profession",
+      template: "[NAME] ",
+      image: "",
+      dataSource: {
+        name: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
+        link: '',
+        visualisation: 'N/A',
+      },
+      nextElements: [
+        {
+          element: "indigenous",
+          segue: ""
+        },
+      ],
     },
   ]
 };

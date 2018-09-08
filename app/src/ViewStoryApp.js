@@ -121,6 +121,7 @@ class Story extends Component {
 
           <Col span={3}>
             <AddStoryPanel
+              lastStoryPanel={this.props.storyPanels == null || this.props.storyPanels.length === 0 ? null : this.getStoryPanelDetails(this.props.storyPanels[this.props.storyPanels.length - 1])}
               proposedStoryAddition={this.props.proposedStoryAddition}
               onShowProposedStoryPanel={this.props.onShowProposedStoryPanel}
               onRejectProposedStoryPanel={this.props.onRejectProposedStoryPanel}

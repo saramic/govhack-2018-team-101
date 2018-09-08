@@ -5,12 +5,21 @@ import "../Story.css";
 import CardDataSource from "./CardDataSource";
 import {StoryPanel} from '../ViewStoryApp';
 
-const Card = ({ visible, data, closeModal, onAcceptProposedStoryPanel, proposedStoryAddition }) => {
+const Card = ({ visible, data, closeModal, onAcceptProposedStoryPanel, lastStoryPanel, proposedStoryAddition }) => {
+
+  let segue = null;
+  if (lastStoryPanel != null && lastStoryPanel.nextElements != null) {
+    const validSegue = lastStoryPanel.nextElements.find(e => e.id === proposedStoryAddition.id);
+    if (validSegue != null) {
+      segue = validSegue.segue;
+    }
+  }
+
   return (
     <div className={visible ? "card" : "card card--back"}>
 
       <div className="card__side card__front">
-        <StoryPanel image={proposedStoryAddition ? proposedStoryAddition.image : ''} panelType={0} segue={null} template={""} />
+        <StoryPanel image={proposedStoryAddition ? proposedStoryAddition.image : ''} panelType={0} segue={null} template={segue} />
       </div>
 
       <div className="card__back">
@@ -61,43 +70,46 @@ export default class AddStoryPanel extends Component {
             <div className="add text">Add</div>
           </div>
         </a>
-        <Modal
-          title={null}
-          visible={this.props.proposedStoryAddition != null}
-          onOk={this.hideForm}
-          onCancel={this.hideForm}
-          className="story-modal"
-          footer={null}>
+        {this.props.proposedStoryAddition == null ? null :
+          <Modal
+            title={null}
+            visible={true}
+            onOk={this.hideForm}
+            onCancel={this.hideForm}
+            className="story-modal"
+            footer={null}>
 
-          <Card
-            visible={this.state.frontShown}
-            closeModal={this.hideForm}
-            proposedStoryAddition={this.props.proposedStoryAddition}
-            onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel}
-          />
+            <Card
+              visible={this.state.frontShown}
+              closeModal={this.hideForm}
+              lastStoryPanel={this.props.lastStoryPanel}
+              proposedStoryAddition={this.props.proposedStoryAddition}
+              onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel}
+            />
 
-          {this.state.frontShown ? (
-            <div>
-              <Button
-                htmlType="a"
-                className="card__button--right btn btn-accept"
-                type="primary"
-                shape="circle"
-                icon="check"
-                onClick={this.showCardFront}
-              />
-              <Button
-                htmlType="a"
-                className="card__button--left btn btn-reject"
-                type="primary"
-                shape="circle"
-                icon="close"
-                onClick={this.showNextStory}
-              />
-            </div>
-          ) : null}
-        </Modal>
-      </div>
+            {this.state.frontShown ? (
+              <div>
+                <Button
+                  htmlType="a"
+                  className="card__button--right btn btn-accept"
+                  type="primary"
+                  shape="circle"
+                  icon="check"
+                  onClick={this.showCardFront}
+                />
+                <Button
+                  htmlType="a"
+                  className="card__button--left btn btn-reject"
+                  type="primary"
+                  shape="circle"
+                  icon="close"
+                  onClick={this.showNextStory}
+                />
+              </div>
+            ) : null}
+          </Modal>
+        }
+    </div>
     );
   };
 }

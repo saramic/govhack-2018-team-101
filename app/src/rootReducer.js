@@ -19,11 +19,12 @@ const defaultState = {
   },
   viewStory: {
     location: "Kingston",
+    protagonist: "Matilda",
 
     /**
      * Test images are from the VisitVictoria open data portal: https://contenthub.visitvictoria.com/.
      */
-    facts: [
+    storyPanels: [
       {
         label: "It's great",
         image:

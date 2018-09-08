@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 const ViewStoryApp = (props) =>
     <div className="App">
-        <Story location={props.location} facts={props.facts} />
+        <Story location={props.location} storyPanels={props.storyPanels} />
     </div>;
 
 const Story = (props) =>
     <div className="story">
         <h1>A Story About {props.location}...</h1>
-        {props.facts.map(fact => <Fact {...fact} />)}
+        {props.storyPanels.map(storyPanel => <StoryPanel {...storyPanel} />)}
     </div>;
 
-const Fact = (props) =>
-    <div className="fact">
+const StoryPanel = (props) =>
+    <div className="story-panel">
         <h2>{props.label}</h2>
-        <img className="fact-image img-thumbnail" src={props.image} />
+        <img className="story-panel-image img-thumbnail" src={props.image} />
         <DataSource dataSource={props.dataSource} />
     </div>;
 

@@ -10,13 +10,13 @@ body {
   border: solid 1px lightblue;
 }
 
-.fact {
+.story-panel {
   padding: 12px;
   margin: 12px;
   border: solid 1px lightgreen;
 }
 
-.fact-image {
+.story-panel-image {
   max-width: 150px;
   max-height: 150px;
 }

@@ -31,7 +31,7 @@ const Card = ({ visible, onAcceptStory, closeModal }) => {
 };
 
 export default class AddStoryPanel extends Component {
-  state = { visible: true, frontShown: true };
+  state = { visible: false, frontShown: true };
 
   showForm = () => {
     this.setState({

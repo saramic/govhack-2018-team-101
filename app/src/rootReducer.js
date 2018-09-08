@@ -1,15 +1,14 @@
 const defaultState = {
-  screen: "view-story" /* or 'build-story' */,
   buildStory: {
-    availableStoryPanels: [
+    storyElements: [
       {
-        template: "[LOCATION] has heaps of grown ups to look after us.",
-        image:
-            "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
+        id: "italian-soccer",
+        template: "[NAME] was walking past a soccer field, and saw people speaking Italian...",
+        image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
         dataSource: "http://data.gov.au",
       },
       {
-        text: "Before [LOCATION] was [LOCATION], it was known as [INDIGENOUS_LOCATION]. Instead of English they spoke [INDIGENOUS_LANGUAGE]",
+        template: "Before [LOCATION] was [LOCATION], it was known as [INDIGENOUS_LOCATION]. Instead of English they spoke [INDIGENOUS_LANGUAGE]",
         image:
             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg",
         dataSource: "http://data.vic.gov.au",
@@ -31,6 +30,13 @@ const defaultState = {
      * Test images are from the VisitVictoria open data portal: https://contenthub.visitvictoria.com/.
      */
     storyPanels: [
+      {
+        id: "italian-soccer",
+        text: "Matilda was walking past a soccer field, and saw people speaking Italian...",
+        image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
+        dataSource: "http://data.gov.au",
+        panelType: Math.round(Math.random() * 3),
+      },
       {
         text: "Kingston has heaps of grown ups to look after us.",
         image:

@@ -69,7 +69,70 @@ const defaultState = {
       id: "aging",
       panelType: Math.round(Math.random() * 3),
     },*/
-  ]
+    {
+      id: "sport-recreation",
+      text: "Matilda was walking past a soccer field, and saw people speaking Italian...",
+      image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
+      dataSource: "http://data.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "Kingston has heaps of grown ups to look after us.",
+      image:
+        "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
+      dataSource: "http://data.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "Before Kingston was Kingston, it was known as Bootowa. Instead of English they spoke ...",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg",
+      dataSource: "http://data.vic.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "It is a council (I think?)",
+      image:
+        "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118939l.jpg",
+      dataSource: "http://kingston.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "There are people there",
+      image:
+        "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118933l.jpg",
+      dataSource: "http://google.com",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "Kingston has heaps of grown ups to look after us.",
+      image:
+        "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
+      dataSource: "http://data.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "Before Kingston was Kingston, it was known as Bootowa. Instead of English they spoke ...",
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg",
+      dataSource: "http://data.vic.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "sport-recreation",
+      text: "It is a council (I think?)",
+      image:
+        "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118939l.jpg",
+      dataSource: "http://kingston.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    },
+   ]
 };
 
 const reducer = (state = defaultState, action) => {
@@ -82,6 +145,24 @@ const reducer = (state = defaultState, action) => {
 
     return Object.assign({}, state, {
       storyPanels: state.storyPanels.concat(newPanel)
+    });
+  }
+  if (action.type === 'ACCEPT_STORY') {
+
+    // storyElements: storyElementsData.storyElements,
+      // storyPanels:
+      //
+    const storyPanel = state.storyElements.filter((storyElement) => (storyElement.id === action.id))[0]
+    const newStoryPanel = {
+      id: storyPanel.id,
+      text: storyPanel.template,
+      image: storyPanel.image,
+      dataSource: "http://data.gov.au",
+      panelType: Math.round(Math.random() * 3),
+    }
+    const stories = state.storyPanels.concat(newStoryPanel);
+    return Object.assign({}, state, {
+      storyPanels: stories
     });
   }
   return state;

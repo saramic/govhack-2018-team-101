@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './App.css';
 import {Row, Col} from 'antd';
 import AddStoryPanel from './components/AddStoryPanel';
@@ -9,7 +9,7 @@ const ViewStoryApp = (props) =>
         <button onClick={props.onShowProposedStoryPanel}>Add to story</button>
     </div>;
 
-const Story = ({storyElements, character, location, storyPanels}) => {
+const Story = ({storyElements, character, location, storyPanels, acceptStoryAction}) => {
 
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
@@ -55,7 +55,7 @@ const Story = ({storyElements, character, location, storyPanels}) => {
                 <AddStoryPanel
                     proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}}
                     onDeclineStory={() => {}}
-                    onAcceptStory={(customText = null, stickers = null) => {}}/>
+                    onAcceptStory={(id) => acceptStoryAction(id) }/>
             </Col>
         </Row>
     </div>

@@ -11,6 +11,7 @@ const ConnectedViewStoryApp = connect(
     onShowProposedStoryPanel: actions.showProposedStoryPanel,
     onAcceptProposedStoryPanel: actions.acceptProposedStoryPanel,
     onRejectProposedStoryPanel: actions.rejectProposedStoryPanel,
+    acceptStoryAction: actions.acceptStoryAction,
   }
 )(ViewStoryApp);
 

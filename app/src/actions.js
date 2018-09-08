@@ -9,3 +9,7 @@ export const rejectProposedStoryPanel = () => {
 export const acceptProposedStoryPanel = () => {
   return {type: "ACCEPT_PROPOSED_STORY_PANEL"};
 };
+
+export const acceptStoryAction = (id) => {
+  return {type: 'ACCEPT_STORY', id: id}
+};

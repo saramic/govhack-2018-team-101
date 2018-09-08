@@ -4,7 +4,7 @@ import React from "react";
 import "../Story.css";
 import CardDataSource from "./CardDataSource";
 
-const Card = ({ visible, data, closeModal }) => {
+const Card = ({ visible, onAcceptStory, closeModal }) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
@@ -19,7 +19,11 @@ const Card = ({ visible, data, closeModal }) => {
 
           <CardDataSource />
 
-          <Button onClick={closeModal}>Submit</Button>
+          <Button onClick={() => {
+            onAcceptStory('school')
+            closeModal()
+          }
+          }>Submit</Button>
         </div>
       </div>
     </div>
@@ -72,7 +76,7 @@ export default class AddStoryPanel extends Component {
           onCancel={this.hideForm}
           footer={null}
         >
-          <Card visible={this.state.frontShown} closeModal={this.hideForm} />
+          <Card visible={this.state.frontShown} closeModal={this.hideForm} onAcceptStory={this.props.onAcceptStory} />
 
           {this.state.frontShown ? (
             <div>

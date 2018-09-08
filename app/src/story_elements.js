@@ -88,7 +88,7 @@ const storyElements = {
     },
     {
       id: "aging",
-      template: "[NAME] ",
+      template: "[NAME] aging",
       image: "https://i.pinimg.com/originals/a7/9f/18/a79f18003de9b41dc90361e97ffa835a.jpg",
       dataSource: {
         name: '',
@@ -97,17 +97,18 @@ const storyElements = {
         visualisation: 'N/A',
       },
       nextElements: [
-        {
-          id: "graffiti",
-          segue: ""
-        },
-        {
-          id: "trees",
-          segue: ""
-        },
+        // TODO these don't work as we do not support unhappy path (ie no nextElements for grafitti & trees)
+        // {
+        //   id: "graffiti",
+        //   segue: ""
+        // },
+        // {
+        //   id: "trees",
+        //   segue: ""
+        // },
         {
           id: "multiculturalism",
-          segue: ""
+          segue: "segue to multiculturalism"
         },
       ]
     },
@@ -137,8 +138,8 @@ const storyElements = {
     },
     {
       id: "multiculturalism",
-      template: "[NAME] ",
-      image: "",
+      template: "[NAME] multiculturalism",
+      image: "https://www.amf.net.au/library/uploads/images/The_Many_Voices_of_Young_Australians.jpg",
       dataSource: {
         name: '',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
@@ -148,14 +149,14 @@ const storyElements = {
       nextElements: [
         {
           id: "gender-equality",
-          segue: ""
+          segue: "segue to gender-equality"
         },
       ],
     },
     {
       id: "gender-equality",
-      template: "[NAME] ",
-      image: "",
+      template: "[NAME] gender-equality",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/NYC_Dyke_March_2011.jpg/1599px-NYC_Dyke_March_2011.jpg",
       dataSource: {
         name: '',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
@@ -165,14 +166,14 @@ const storyElements = {
       nextElements: [
         {
           id: "profession",
-          segue: ""
+          segue: "segue to profession"
         },
       ],
     },
     {
       id: "profession",
       template: "I want to be a fire fighter when I grow up",
-      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiJ9JOR_ardAhWUAIgKHYRQBtEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.theodysseyonline.com%2Fgrowing-child-firefighter&psig=AOvVaw2-SvawR0ft-9X6tLproWEp&ust=1536481321904516",
+      image: "https://assets-auto.rbl.ms/e44680baec11ce3e6151d710dc3e79c9b875b57e4e321e8787a3dbf0bf0b7786",
       dataSource: {
           name: 'Employment projections',
           hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/116',
@@ -182,14 +183,14 @@ const storyElements = {
       nextElements: [
         {
           id: "indigenous",
-          segue: ""
+          segue: "segue to indigenous"
         },
       ],
     },
     {
       id: "indigenous",
-      template: "[NAME] ",
-      image: "",
+      template: "[NAME] indigenous",
+      image: "https://cdn.newsapi.com.au/image/v1/6de41d261846a75fee88dcf92a67efc9",
       dataSource: {
         name: '',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',

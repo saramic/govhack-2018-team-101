@@ -13,7 +13,7 @@ const Story = (props) =>
         <h1>{props.character} in {props.location}...</h1>
         <Row gutter={12}>
             {props.storyPanels.map(storyPanel =>
-                <Col span={storyPanel.panelType <= 1 ? 3 : 5}>
+                <Col span={storyPanel.panelType <= 1 ? 5 : 7}>
                     <StoryPanel {...storyPanel} />
                 </Col>
             )}

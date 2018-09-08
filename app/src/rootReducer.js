@@ -140,7 +140,7 @@ const reducer = (state = defaultState, action) => {
     // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
     // const potentialNextStories = lastStoryItem === null ? state.storyElements :
 
-    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
+    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1), 10)];
     const newPanel = Object.assign({}, newElement, {panelType: Math.round(Math.random() * 3)});
 
     return Object.assign({}, state, {
@@ -148,17 +148,10 @@ const reducer = (state = defaultState, action) => {
     });
   }
   if (action.type === 'ACCEPT_STORY') {
-
-    // storyElements: storyElementsData.storyElements,
-      // storyPanels:
-      //
     const storyPanel = state.storyElements.filter((storyElement) => (storyElement.id === action.id))[0]
     const newStoryPanel = {
       id: storyPanel.id,
-      text: storyPanel.template,
-      image: storyPanel.image,
-      dataSource: "http://data.gov.au",
-      panelType: Math.round(Math.random() * 3),
+      panelType: 2,
     }
     const stories = state.storyPanels.concat(newStoryPanel);
     return Object.assign({}, state, {

@@ -9,10 +9,10 @@ const Card = ({ visible, onAcceptStory, closeModal }) => {
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
         <h2>Do you want to see more penguins?</h2>
-        <img src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
+        <img alt="need an alt" src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
       </div>
       <div className="card__back">
-        <img src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
+        <img alt="need an alt" src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
 
         <div className="card__data">
           <p>Test</p>
@@ -58,7 +58,7 @@ export default class AddStoryPanel extends Component {
     return (
       <div className="story-panel story-panel-new">
         <a
-          href="#"
+          href="#new-panel"
           onClick={e => {
             e.preventDefault();
             this.showForm();

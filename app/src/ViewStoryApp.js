@@ -81,9 +81,9 @@ const StoryPanel = ({panelType, template, image, segue = null}) =>
  * @returns {*}
  * @constructor
  */
-const DataSource = (props) =>
-    <div className="data-source">
-        Source: {props.dataSource}
-    </div>;
+// const DataSource = (props) =>
+//     <div className="data-source">
+//         Source: {props.dataSource}
+//     </div>;
 
 export default ViewStoryApp;

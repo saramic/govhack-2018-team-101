@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ViewStoryApp from "./ViewStoryApp";
 import * as actions from "./actions";
 import { connect } from "react-redux";

@@ -45,6 +45,7 @@ const defaultState = {
 };
 
 const reducer = (state = defaultState, action) => {
+
   if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
     // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
     // const potentialNextStories = lastStoryItem === null ? state.storyElements :
@@ -56,12 +57,16 @@ const reducer = (state = defaultState, action) => {
       storyPanels: state.storyPanels.concat(newPanel)
     });
   }
+
   if (action.type === 'ACCEPT_STORY') {
+
     const storyPanel = state.storyElements.filter((storyElement) => (storyElement.id === action.id))[0]
+
     const newStoryPanel = {
       id: storyPanel.id,
-      panelType: 2,
-    }
+      panelType: Math.round(Math.random() * 3),
+    };
+
     const stories = state.storyPanels.concat(newStoryPanel);
     return Object.assign({}, state, {
       storyPanels: stories

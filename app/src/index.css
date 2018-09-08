@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Dokdo|Permanent+Marker');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=fcfaf7ff&noise=e6ddd6&density=22&opacity=38')
+  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=fcfaf7ff&noise=e6ddd6&density=22&opacity=38');
+  font-family: 'Permanent Marker', cursive;
 }
 
 .story {
@@ -16,7 +18,9 @@ body {
   width: 100%;
   border: 0.2em solid transparent;
   border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 27 27 27 round stretch;
+  border-radius: 10px;
 }
+
 .story-panel .text {
   padding: 6px;
   font-size: 14px;
@@ -24,6 +28,19 @@ body {
 
 .story-panel .image {
   max-width: 100%;
+}
+
+.story-panel .add.icon {
+  font-size: 120px;
+}
+
+.story-panel .add.text {
+  font-size: 40px;
+}
+
+.story-panel-new:hover {
+  background: lightblue;
+  cursor: hand;
 }
 
 /**

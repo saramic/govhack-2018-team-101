@@ -4,19 +4,33 @@ import {Row, Col} from 'antd';
 
 const ViewStoryApp = (props) =>
     <div className="App">
-        <Story location={props.location} storyPanels={props.storyPanels} />
+        <Story {...props} />
     </div>;
 
 const Story = (props) =>
     <div className="story">
-        <h1>A Story About {props.location}...</h1>
+        <h1>{props.character} in {props.location}...</h1>
         <Row gutter={12}>
             {props.storyPanels.map(storyPanel =>
                 <Col span={storyPanel.panelType <= 1 ? 3 : 5}>
                     <StoryPanel {...storyPanel} />
                 </Col>
             )}
+
+            <Col span={3}>
+                <AddStoryPanel />
+            </Col>
         </Row>
+    </div>;
+
+const AddStoryPanel = () =>
+    <div className="story-panel story-panel-new">
+        <a href="#" onClick={e => e.preventDefault()}>
+            <div className="content">
+                <div className="add icon">+</div>
+                <div className="add text">Add</div>
+            </div>
+        </a>
     </div>;
 
 const StoryPanel = (props) =>

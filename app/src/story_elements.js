@@ -131,7 +131,7 @@ const storyElements = {
     {
       id: "graffiti",
       template: "I want to be artistic and graffiti a mural",
-      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjPxMK4h6vdAhWPbN4KHRu-AHkQjRx6BAgBEAU&url=https%3A%2F%2Fwww.thefactsite.com%2F2017%2F10%2Fgraffiti-facts.html&psig=AOvVaw3z7IGWQEHmRc1sxchH1Ys1&ust=1536484065468492",
+      image: "https://www.thefactsite.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
       dataSource: {
           name: 'Crime Stats Agency',
           hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/300',

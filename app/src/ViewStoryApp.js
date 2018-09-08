@@ -2,13 +2,14 @@ import React from 'react'
 import './App.css';
 import {Row, Col} from 'antd';
 import AddStoryPanel from './components/AddStoryPanel';
+import * as actions from "./actions";
 
 const ViewStoryApp = (props) =>
     <div className="App">
         <Story {...props} />
     </div>;
 
-const Story = ({storyElements, character, location, storyPanels, acceptStoryAction}) => {
+const Story = ({storyElements, character, location, storyPanels, proposedStoryAddition, onShowProposedStoryPanel, onAcceptProposedStoryPanel, onRejectProposedStoryPanel}) => {
 
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
@@ -66,10 +67,10 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
 
             <Col span={3}>
                 <AddStoryPanel
-                    onDeclineStory={() => {}}
-                    onAcceptStory={(id) => acceptStoryAction(id)}
-                    nextBestSegue={nextBestSegue}
-                    nextPanel={nextBestPanel}/>
+                    proposedStoryAddition={proposedStoryAddition}
+                    onShowProposedStoryPanel={onShowProposedStoryPanel}
+                    onRejectProposedStoryPanel={onRejectProposedStoryPanel}
+                    onAcceptProposedStoryPanel={(customText = null, stickers = null) => onAcceptProposedStoryPanel()}/>
             </Col>
         </Row>
     </div>

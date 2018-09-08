@@ -19,21 +19,33 @@ const defaultState = {
   },
   viewStory: {
     location: "Kingston",
+
+    /**
+     * Test images are from the VisitVictoria open data portal: https://contenthub.visitvictoria.com/.
+     */
     facts: [
       {
         label: "It's great",
+        image:
+          "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
         dataSource: "http://data.gov.au"
       },
       {
         label: "It's okay...",
+        image:
+          "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132948l.jpg",
         dataSource: "http://data.vic.gov.au"
       },
       {
         label: "It is a council (I think?)",
+        image:
+          "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118939l.jpg",
         dataSource: "http://kingston.gov.au"
       },
       {
         label: "There are people there",
+        image:
+          "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118933l.jpg",
         dataSource: "http://google.com"
       }
     ]

@@ -1,3 +1,3 @@
-const newStoryAction = (stories) => {return {type: 'ADD_STORY', stories: stories}};
+const newStoryAction = (story) => {return {type: 'ADD_STORY', story: story}};
 
 export default newStoryAction;

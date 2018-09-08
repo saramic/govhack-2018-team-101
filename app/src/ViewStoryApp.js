@@ -3,7 +3,7 @@ import {Grid, Row, Col} from 'react-bootstrap';
 import './App.css';
 
 const ViewStoryApp = (props) =>
-    <Grid className="App">
+    <Grid fluid={true} className="App">
         <Row>
             <Col md={8} mdOffset={2}>
                 <Story location={props.location} facts={props.facts} />
@@ -13,14 +13,21 @@ const ViewStoryApp = (props) =>
 
 const Story = (props) =>
     <div className="story">
-        A Story About {props.location}...
+        <h1>A Story About {props.location}...</h1>
         {props.facts.map(fact => <Fact {...fact} />)}
     </div>;
 
 const Fact = (props) =>
     <div className="fact">
-        Fact: {props.label}
-        <DataSource dataSource={props.dataSource} />
+        <Grid fluid={true}>
+            <Row>
+                <h2>{props.label}</h2>
+            </Row>
+            <Row>
+                <img className="fact-image img-thumbnail" src={props.image} />
+                <DataSource dataSource={props.dataSource} />
+            </Row>
+        </Grid>
     </div>;
 
 /**

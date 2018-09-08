@@ -15,3 +15,8 @@ body {
   margin: 12px;
   border: solid 1px lightgreen;
 }
+
+.fact-image {
+  max-width: 150px;
+  max-height: 150px;
+}

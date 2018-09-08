@@ -19,7 +19,7 @@ const Story = (props) =>
             )}
 
             <Col span={3}>
-                <AddStoryPanel />
+                <AddStoryPanel proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}} onDeclineStory={() => {}} onAcceptStory={(customText = null, stickers = null) => {}}/>
             </Col>
         </Row>
     </div>;

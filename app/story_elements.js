@@ -68,27 +68,6 @@ const storyElements = {
     },
     {
       id: "recycling",
-      template: "[NAME] ",
-      image: "",
-      dataSource: {
-        name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
-        visualisation: 'N/A',
-      },
-      nextElements: [
-        {
-          "element": "carlton-gardens",
-          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
-        },
-        {
-          "element": "soccer-fields",
-          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
-        }
-      ]
-    },
-    {
-      id: "recycling",
       template: "You spot some soft drink cans on the ground, so you pick them up and throw them into a recycling bin nearby. You learnt at school that each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km in your family car!",
       image: "",
       dataSource: {
@@ -99,8 +78,12 @@ const storyElements = {
       },
       nextElements: [
         {
-          element: "aging",
-          segue: ""
+          "element": "carlton-gardens",
+          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
+        },
+        {
+          "element": "soccer-fields",
+          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
         }
       ]
     },

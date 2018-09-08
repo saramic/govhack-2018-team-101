@@ -47,7 +47,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          "element": "sport-recreation",
+          id: "sport-recreation",
           "segue": "You choose to go and play soccer",
         },
       ]
@@ -64,7 +64,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          "element": "recycling",
+          id: "recycling",
           "segue": "I see some rubbish and decide to recycle it"
         },
       ]
@@ -81,7 +81,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          "element": "aging",
+          id: "aging",
           "segue": "as you put the recycling away you see an elderly gentleman feeding the ducks"
         },
       ]
@@ -89,7 +89,7 @@ const storyElements = {
     {
       id: "aging",
       template: "[NAME] ",
-      image: "",
+      image: "https://i.pinimg.com/originals/a7/9f/18/a79f18003de9b41dc90361e97ffa835a.jpg",
       dataSource: {
         name: '',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
@@ -147,7 +147,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          element: "gender-equality",
+          id: "gender-equality",
           segue: ""
         },
       ],
@@ -164,7 +164,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          element: "profession",
+          id: "profession",
           segue: ""
         },
       ],
@@ -181,7 +181,7 @@ const storyElements = {
       },
       nextElements: [
         {
-          element: "indigenous",
+          id: "indigenous",
           segue: ""
         },
       ],

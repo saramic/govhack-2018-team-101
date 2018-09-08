@@ -55,7 +55,9 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
                 <AddStoryPanel
                     proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}}
                     onDeclineStory={() => {}}
-                    onAcceptStory={(id) => acceptStoryAction(id) }/>
+                    onAcceptStory={(id) => acceptStoryAction(id)}
+                    segue={getStoryElement(storyPanels[storyPanels.length-1]).nextElements[0].segue}
+                    nextPanel={getStoryElement(getStoryElement(storyPanels[storyPanels.length-1]).nextElements[0])}/>
             </Col>
         </Row>
     </div>

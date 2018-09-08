@@ -4,15 +4,15 @@ import React from "react";
 import "../Story.css";
 import CardDataSource from "./CardDataSource";
 
-const Card = ({ visible, onAcceptStory, closeModal }) => {
+const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
-        <h2>Do you want to see more penguins?</h2>
-        <img alt="need an alt" src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
+        <h2>{segue}</h2>
+        <img alt="need an alt" src={nextPanel.image} />
       </div>
       <div className="card__back">
-        <img alt="need an alt" src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
+        <img alt="need an alt" src={nextPanel.image} />
 
         <div className="card__data">
           <p>Test</p>
@@ -74,9 +74,14 @@ export default class AddStoryPanel extends Component {
           visible={this.state.visible}
           onOk={this.hideForm}
           onCancel={this.hideForm}
-          footer={null}
-        >
-          <Card visible={this.state.frontShown} closeModal={this.hideForm} onAcceptStory={this.props.onAcceptStory} />
+          footer={null}>
+
+          <Card
+            visible={this.state.frontShown}
+            closeModal={this.hideForm}
+            onAcceptStory={this.props.onAcceptStory}
+            segue={this.props.segue}
+            nextPanel={this.props.nextPanel}/>
 
           {this.state.frontShown ? (
             <div>

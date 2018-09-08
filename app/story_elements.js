@@ -26,6 +26,7 @@
 // 7) Gender equality - Michael
 //
 // 5) profession - Selena
+//    Fire Fighters have an 8.6% projected growth in next 5 years in Australia
 //
 // 8) Indiginous - Adam
 //
@@ -148,13 +149,13 @@ const storyElements = {
     },
     {
       id: "profession",
-      template: "[NAME] ",
-      image: "",
+      template: "I want to be a fire fighter when I grow up",
+      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiJ9JOR_ardAhWUAIgKHYRQBtEQjRx6BAgBEAU&url=https%3A%2F%2Fwww.theodysseyonline.com%2Fgrowing-child-firefighter&psig=AOvVaw2-SvawR0ft-9X6tLproWEp&ust=1536481321904516",
       dataSource: {
-        name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
-        visualisation: 'N/A',
+          name: 'Employment projections',
+          hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/116',
+          link: 'http://lmip.gov.au/default.aspx?LMIP/GainInsights/EmploymentProjections',
+          visualisation: 'N/A',
       },
       nextElements: [
         {
@@ -164,7 +165,7 @@ const storyElements = {
       ],
     },
     {
-      id: "profession",
+      id: "indigenous",
       template: "[NAME] ",
       image: "",
       dataSource: {
@@ -173,12 +174,7 @@ const storyElements = {
         link: '',
         visualisation: 'N/A',
       },
-      nextElements: [
-        {
-          element: "indigenous",
-          segue: ""
-        },
-      ],
+      nextElements: [],
     },
   ]
 };

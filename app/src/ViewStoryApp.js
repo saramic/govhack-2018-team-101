@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import {Row, Col, Modal} from 'antd';
+import {Row, Col} from 'antd';
 import AddStoryPanel from './components/AddStoryPanel';
 
 const ViewStoryApp = (props) =>

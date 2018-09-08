@@ -4,7 +4,6 @@ import ViewStoryApp from "./ViewStoryApp";
 import * as actions from "./actions";
 import { connect } from "react-redux";
 import Home from "./pages/Home";
-import { createStore, bindActionCreators } from "redux";
 
 const ConnectedViewStoryApp = connect(
   state => state.viewStory,

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {Row, Col} from 'antd';
 
 const ViewStoryApp = (props) =>
     <div className="App">
@@ -9,14 +10,23 @@ const ViewStoryApp = (props) =>
 const Story = (props) =>
     <div className="story">
         <h1>A Story About {props.location}...</h1>
-        {props.storyPanels.map(storyPanel => <StoryPanel {...storyPanel} />)}
+        <Row gutter={12}>
+            {props.storyPanels.map(storyPanel =>
+                <Col span={storyPanel.panelType <= 1 ? 3 : 5}>
+                    <StoryPanel {...storyPanel} />
+                </Col>
+            )}
+        </Row>
     </div>;
 
 const StoryPanel = (props) =>
-    <div className="story-panel">
-        <h2>{props.label}</h2>
-        <img className="story-panel-image img-thumbnail" src={props.image} />
-        <DataSource dataSource={props.dataSource} />
+    <div className={`story-panel story-panel-${props.panelType}`}>
+        <div className="content">
+            <span className="text">{props.text}</span>
+            <div className="image" style={{backgroundSize: 'cover', backgroundImage: 'url(' + props.image + ')'}}>
+
+            </div>
+        </div>
     </div>;
 
 /**

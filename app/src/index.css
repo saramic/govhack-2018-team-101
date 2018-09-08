@@ -11,12 +11,119 @@ body {
 }
 
 .story-panel {
-  padding: 12px;
   margin: 12px;
   border: solid 1px lightgreen;
+  height: 300px;
+  width: 100%;
 }
 
-.story-panel-image {
-  max-width: 150px;
-  max-height: 150px;
+.story-panel .text {
+  padding: 6px;
+  font-size: 14px;
+}
+
+.story-panel .image {
+  max-width: 100%;
+}
+
+/**
+ * Image in the background, text in the top left.
+ */
+.story-panel-0 {
+  border: solid 2px orange;
+}
+
+.story-panel-0 .content {
+  position: relative;
+  height: 100%;
+}
+
+.story-panel-0 .content .image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1000;
+}
+
+.story-panel-0 .content .text {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  width: 50%;
+}
+
+/**
+ * Image in the background, text in the bottom right.
+ */
+.story-panel-1 {
+  border: solid 2px red;
+}
+
+.story-panel-1 .content {
+  position: relative;
+  height: 100%;
+}
+
+.story-panel-1 .image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1000;
+}
+
+.story-panel-1 .text {
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: inline-block;
+  width: 50%;
+}
+
+/**
+ * Image on the left, text on the right.
+ */
+.story-panel-2 {
+  border: solid 2px green;
+}
+
+.story-panel-2 .content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.story-panel-2 .image {
+  flex-grow: 1;
+}
+
+.story-panel-2 .text {
+  max-width: 30%;
+}
+
+/**
+ * Image on the right, text on the left.
+ */
+.story-panel-3 {
+  border: solid 2px blue;
+}
+
+.story-panel-3 .content {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+}
+
+.story-panel-3 .image {
+  flex-grow: 1;
+}
+
+.story-panel-3 .text {
+  max-width: 30%;
 }

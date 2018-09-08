@@ -74,6 +74,7 @@ export default class AddStoryPanel extends Component {
           visible={this.state.visible}
           onOk={this.hideForm}
           onCancel={this.hideForm}
+          className="story-modal"
           footer={null}>
 
           <Card

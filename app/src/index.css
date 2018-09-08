@@ -23,9 +23,11 @@ h1 {
   margin: 12px;
   height: 300px;
   width: 100%;
+}
+
+.story-panel, .story-modal .ant-modal-content {
   border: 0.2em solid transparent;
   border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 27 27 27 round stretch;
-  border-radius: 10px;
 }
 
 .story-panel .text {
@@ -150,4 +152,9 @@ h1 {
   max-width: 30%;
   height: 100%;
   background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57')
+}
+
+
+.story-modal .ant-modal-content {
+  border-radius: 0;
 }

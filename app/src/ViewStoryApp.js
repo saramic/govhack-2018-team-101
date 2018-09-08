@@ -6,7 +6,6 @@ import AddStoryPanel from './components/AddStoryPanel';
 const ViewStoryApp = (props) =>
     <div className="App">
         <Story {...props} />
-        <button onClick={props.onShowProposedStoryPanel}>Add to story</button>
     </div>;
 
 const Story = ({storyElements, character, location, storyPanels, acceptStoryAction}) => {
@@ -53,7 +52,6 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
 
             <Col span={3}>
                 <AddStoryPanel
-                    proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}}
                     onDeclineStory={() => {}}
                     onAcceptStory={(id) => acceptStoryAction(id)}
                     segue={getStoryElement(storyPanels[storyPanels.length-1]).nextElements[0].segue}

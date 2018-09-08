@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import {Row, Col, Modal} from 'antd';
+import {Row, Col} from 'antd';
 import AddStoryPanel from './components/AddStoryPanel';
 
 const ViewStoryApp = (props) =>
@@ -19,7 +19,10 @@ const Story = (props) =>
             )}
 
             <Col span={3}>
-                <AddStoryPanel proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}} onDeclineStory={() => {}} onAcceptStory={(customText = null, stickers = null) => {}}/>
+                <AddStoryPanel
+                    proposedStory={{text: "Matilda is in Kingston", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg"}}
+                    onDeclineStory={() => {}}
+                    onAcceptStory={(customText = null, stickers = null) => {}}/>
             </Col>
         </Row>
     </div>;

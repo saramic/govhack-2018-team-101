@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore, bindActionCreators } from "redux";
 import { Provider, connect } from "react-redux";
+import { createStore } from "redux";
 import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import reducer from "./rootReducer";
 import App from "./App";
-import * as actions from "./actions";
 
 import 'antd/dist/antd.css';
 
@@ -19,15 +18,7 @@ store.subscribe(() => {
   console.log(store.getState());
 });
 
-const ConnectedApp = connect(
-  state => state,
-  bindActionCreators(
-    {
-      onSwitchScreen: screen => actions.switchScreen(screen)
-    },
-    store.dispatch
-  )
-)(App);
+const ConnectedApp = connect(state => state)(App);
 
 ReactDOM.render(
   <Provider store={store}>

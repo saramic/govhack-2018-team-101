@@ -1,4 +1,3 @@
-export const switchScreen = nextScreen => {
-  console.log(nextScreen);
-  return { type: "SWITCH_SCREEN", screen: nextScreen };
+export const showProposedStoryPanel = () => {
+  return {type: "SHOW_PROPOSED_STORY_PANEL"};
 };

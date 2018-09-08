@@ -164,6 +164,7 @@ h1 {
 
 .story-modal .ant-modal-content {
   border-radius: 0;
+  box-shadow: black 0 4px 8px;
 }
 
 .story-modal .btn-accept {

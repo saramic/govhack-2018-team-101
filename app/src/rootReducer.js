@@ -1,3 +1,5 @@
+import storyElementsData from './story_elements'
+
 const defaultState = {
 
   location: "Kingston",
@@ -21,86 +23,52 @@ const defaultState = {
    *    * "I was walking past a soccer field, and saw people speaking Italian. A suburb with lots of italians is Carlton, which also has wonderful gardens" (Note the segue is now included).
    *    * "Carlton gardens is great because... blah blah" (Note: No segue included, because we don't know where we are segueing to yet...)
    */
-  storyElements: [
-    {
-      id: "italian-soccer",
-      text: "I was walking past a soccer field, and saw people speaking Italian...",
-      image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
-      dataSource: "http://data.gov.au",
-      nextElements: {
-        "carlton-gardens": "A suburb with lots of Italians is Carlton, which also has wonderful gardens",
-        "soccer-fields": "That reminded me of the place with the most soccer fields in Melbourne - Berwick.",
-      },
-    },
-    {
-      id: "carlton-gardens",
-      text: "Carlton gardens is one of the best ... blah blah.",
-      image: "https://whatson.melbourne.vic.gov.au/Placestogo/ParksandGardens/AllParksandGardens/PublishingImages/14446Large.jpg",
-      dataSource: "http://data.vic.gov.au",
-      nextElements: {},
-    },
-    {
-      id: "soccer-fields",
-      text: "So many soccer fields...",
-      image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
-      dataSource: "",
-      nextElements: {},
-    },
-    {
-      id: "philip-island-penguins",
-      text: "Penguin parade!",
-      image: "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
-      dataSource: "http://data.vic.gov.au",
-      nextElements: {
-        "philip-island-seals": "Philip island doesn't just have penguins, it also has seals!",
-      },
-    },
-    {
-      id: "aboriginal-heritage",
-      text: "Before Kingston was Kingston, it was known as Bootowa. Instead of English they spoke ...",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg",
-      dataSource: "http://data.vic.gov.au",
-      nextElements: {},
-    },
-    {
-      id: "philip-island-seals",
-      text: "Seals on the island...",
-      image: "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000057/118939l.jpg",
-      dataSource: "http://kingston.gov.au",
-      nextElements: {
-        "philip-island-penguins": "Philip island doesn't just have seals, it also has penguins!",
-      }
-    },
-  ],
+  storyElements: storyElementsData.storyElements,
 
   /**
    * Test images are from the VisitVictoria open data portal: https://contenthub.visitvictoria.com/.
    */
   storyPanels: [
     {
-      id: "italian-soccer",
+      id: "school",
       panelType: Math.round(Math.random() * 3),
     },
     {
-      id: "carlton-gardens",
+      id: "sport-recreation",
       panelType: Math.round(Math.random() * 3),
     },
     {
-      id: "soccer-fields",
+      id: "recycling",
       panelType: Math.round(Math.random() * 3),
     },
     {
-      id: "philip-island-penguins",
+      id: "graffiti",
       panelType: Math.round(Math.random() * 3),
     },
     {
-      id: "philip-island-seals",
+      id: "trees",
       panelType: Math.round(Math.random() * 3),
     },
     {
-      id: "aboriginal-heritage",
+      id: "profession",
       panelType: Math.round(Math.random() * 3),
     },
+    /*{
+      id: "multiculturalism",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "gender-equality",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "indigenous",
+      panelType: Math.round(Math.random() * 3),
+    },
+    {
+      id: "aging",
+      panelType: Math.round(Math.random() * 3),
+    },*/
   ]
 };
 

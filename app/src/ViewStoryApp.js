@@ -32,11 +32,13 @@ const Story = ({storyElements, character, location, storyPanels}) => {
 
     const thisElement = getStoryElement(storyPanel);
     const nextElement = getStoryElement(storyPanels[nextIndex]);
-    if (nextElement == null || !thisElement.nextElements.hasOwnProperty(nextElement.id)) {
+    if (nextElement == null) {
       return null;
     }
 
-    return thisElement.nextElements[nextElement.id];
+    const nextElementSegueDetails = thisElement.nextElements.find(e => e.element === nextElement.id);
+
+    return nextElementSegueDetails ? nextElementSegueDetails.segue : null;
   };
 
   return (
@@ -60,12 +62,11 @@ const Story = ({storyElements, character, location, storyPanels}) => {
   );
 };
 
-const StoryPanel = ({panelType, text, image, segue = null}) =>
+const StoryPanel = ({panelType, template, image, segue = null}) =>
     <div className={`story-panel story-panel-${panelType}`}>
         <div className="content">
-            <span className="text">{text} {segue}</span>
-            <div className="image" style={{backgroundSize: 'cover', backgroundImage: 'url(' + image + ')'}}>
-
+            <span className="text">{template} {segue}</span>
+            <div className="image" style={{backgroundSize: 'cover', backgroundImage: 'url(' + (image ? image : 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg') + ')'}}>
             </div>
         </div>
     </div>;

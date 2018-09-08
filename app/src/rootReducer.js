@@ -65,7 +65,12 @@ const reducer = (state = defaultState, action) => {
     // const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
     const newElement = state.storyElements.find(e => e.id === "aging");
 
-    return Object.assign({}, state, { proposedStoryAddition: newElement });
+    return Object.assign({}, state, {proposedStoryAddition: newElement});
+
+  } else if (action.type === "CLOSE_PROPOSED_STORY_PANEL") {
+
+    return Object.assign({}, state, {proposedStoryAddition: null});
+
   } else if (action.type === "REJECT_PROPOSED_STORY_PANEL") {
     const newElement =
       state.storyElements[

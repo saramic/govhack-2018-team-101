@@ -31,7 +31,7 @@ const Card = ({ visible, data, closeModal, onAcceptProposedStoryPanel, lastStory
 
           <CardDataSource />
 
-          <Button onClick={onAcceptProposedStoryPanel}>Submit</Button>
+          <Button onClick={() => {closeModal(); onAcceptProposedStoryPanel()}}>Submit</Button>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@ export default class AddStoryPanel extends Component {
             title={null}
             visible={true}
             onOk={this.hideForm}
-            onCancel={this.hideForm}
+            onCancel={() => {this.hideForm(); this.props.onCloseAddStoryPanel()}}
             className="story-modal"
             footer={null}>
 

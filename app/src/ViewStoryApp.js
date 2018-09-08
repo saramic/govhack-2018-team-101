@@ -129,6 +129,7 @@ class Story extends Component {
                 customText = null,
                 stickers = null
               ) => this.props.onAcceptProposedStoryPanel()}
+              onCloseAddStoryPanel={this.props.onCloseAddStoryPanel}
             />
           </Col>
         </Row>

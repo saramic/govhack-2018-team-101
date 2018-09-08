@@ -3,13 +3,13 @@ import { Modal, Button } from "antd";
 import React from "react";
 import "../Story.css";
 import CardDataSource from "./CardDataSource";
+import {StoryPanel} from '../ViewStoryApp';
 
 const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
-        <h2>{segue}</h2>
-        <img alt="need an alt" src={nextPanel.image} />
+        <StoryPanel image={nextPanel.image} panelType={0} segue={null} template={segue} />
       </div>
       <div className="card__back">
         <img alt="need an alt" src={nextPanel.image} />

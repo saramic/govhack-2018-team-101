@@ -192,3 +192,14 @@ h1 {
   font-size: 22pt;
   border-width: 3px;
 }
+
+.story-modal .card__front .story-panel {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: none; /* We have a border on our card element, so it isn't required here too */
+}
+
+.story-modal .ant-modal-body {
+  padding: 0;
+}

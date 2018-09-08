@@ -62,7 +62,7 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
   );
 };
 
-const StoryPanel = ({panelType, template, image, segue = null}) =>
+export const StoryPanel = ({panelType, template, image, segue = null}) =>
     <div className={`story-panel story-panel-${panelType}`}>
         <div className="content">
             <span className="text">{template} {segue}</span>

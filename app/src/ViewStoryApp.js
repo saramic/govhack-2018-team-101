@@ -40,14 +40,18 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
     return nextElementSegueDetails ? nextElementSegueDetails.segue : null;
   };
 
-  const nextBestSegue = () => {
+  const nextBestNextElement = () => {
+    // TODO this needs to know what has been tried by changing state
     const nextElementsList = getStoryElement(storyPanels[storyPanels.length-1]).nextElements
-    return nextElementsList.length > 0 ? nextElementsList[0].segue : 'There is no segue - start message?'
+    return nextElementsList.length > 0 ? nextElementsList[0] : null
+  }
+
+  const nextBestSegue = () => {
+    return nextBestNextElement() ? nextBestNextElement().segue : 'There is no segue - start message?'
   }
 
   const nextBestPanel = () => {
-    const nextElementsList = getStoryElement(storyPanels[storyPanels.length-1]).nextElements
-    return nextElementsList.length > 0 ? getStoryElement(nextElementsList[0]) : storyElements[0] // TODO get random of storyElements
+    return nextBestNextElement() ? getStoryElement(nextBestNextElement()) : 'There is no segue - start message?'
   }
 
   return (

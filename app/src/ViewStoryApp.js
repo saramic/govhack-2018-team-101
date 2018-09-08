@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
 import './App.css';
 
 const ViewStoryApp = (props) =>
-    <Grid fluid={true} className="App">
-        <Row>
-            <Col md={8} mdOffset={2}>
-                <Story location={props.location} facts={props.facts} />
-            </Col>
-        </Row>
-    </Grid>;
+    <div className="App">
+        <Story location={props.location} facts={props.facts} />
+    </div>;
 
 const Story = (props) =>
     <div className="story">
@@ -19,15 +14,9 @@ const Story = (props) =>
 
 const Fact = (props) =>
     <div className="fact">
-        <Grid fluid={true}>
-            <Row>
-                <h2>{props.label}</h2>
-            </Row>
-            <Row>
-                <img className="fact-image img-thumbnail" src={props.image} />
-                <DataSource dataSource={props.dataSource} />
-            </Row>
-        </Grid>
+        <h2>{props.label}</h2>
+        <img className="fact-image img-thumbnail" src={props.image} />
+        <DataSource dataSource={props.dataSource} />
     </div>;
 
 /**

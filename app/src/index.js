@@ -8,8 +8,7 @@ import reducer from "./rootReducer";
 import App from "./App";
 import * as actions from "./actions";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/css/bootstrap-theme.css";
+import 'antd/dist/antd.css';
 
 const store = createStore(
   reducer,

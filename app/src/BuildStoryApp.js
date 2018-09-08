@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import {Grid, Row, Col} from 'react-bootstrap';
 import './App.css';
 
 const BuildStoryApp = (props) =>
-    <Grid className="BuildStoryApp">
-        <Row>
-            <Col md={8} mdOffset={2}>
-                <h2>The Story of Matilda</h2>
-                <p>
-                    A grade 6 school girl from Collingwood College using open data to explore her community
-                    and build a story
-                </p>
-                <StoryBuilder
-                    newStories={props.newStories} />
-                <StoryBoard
-                    stories={props.stories} />
-            </Col>
-        </Row>
-    </Grid>;
+    <div className="BuildStoryApp">
+        <h2>The Story of Matilda</h2>
+        <p>
+            A grade 6 school girl from Collingwood College using open data to explore her community
+            and build a story
+        </p>
+        <StoryBuilder
+            newStories={props.newStories} />
+        <StoryBoard
+            stories={props.stories} />
+    </div>;
 
 class StoryBuilder extends Component {
     render() {

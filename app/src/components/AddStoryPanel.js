@@ -20,7 +20,7 @@ const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
           <CardDataSource />
 
           <Button onClick={() => {
-            onAcceptStory('school')
+            onAcceptStory(nextPanel.id)
             closeModal()
           }
           }>Submit</Button>

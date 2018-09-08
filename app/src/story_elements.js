@@ -98,15 +98,15 @@ const storyElements = {
       },
       nextElements: [
         {
-          element: "graffiti",
+          id: "graffiti",
           segue: ""
         },
         {
-          element: "trees",
+          id: "trees",
           segue: ""
         },
         {
-          element: "multiculturalism",
+          id: "multiculturalism",
           segue: ""
         },
       ]

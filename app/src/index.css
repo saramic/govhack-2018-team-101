@@ -7,16 +7,15 @@ body {
 .story {
   padding: 12px;
   margin: 12px;
-  border: solid 1px lightblue;
 }
 
 .story-panel {
   margin: 12px;
-  border: solid 1px lightgreen;
   height: 300px;
   width: 100%;
+  border: 0.2em solid transparent;
+  border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 27 27 27 round stretch;
 }
-
 .story-panel .text {
   padding: 6px;
   font-size: 14px;
@@ -30,7 +29,6 @@ body {
  * Image in the background, text in the top left.
  */
 .story-panel-0 {
-  border: solid 2px orange;
 }
 
 .story-panel-0 .content {
@@ -60,7 +58,6 @@ body {
  * Image in the background, text in the bottom right.
  */
 .story-panel-1 {
-  border: solid 2px red;
 }
 
 .story-panel-1 .content {
@@ -90,7 +87,6 @@ body {
  * Image on the left, text on the right.
  */
 .story-panel-2 {
-  border: solid 2px green;
 }
 
 .story-panel-2 .content {
@@ -111,7 +107,6 @@ body {
  * Image on the right, text on the left.
  */
 .story-panel-3 {
-  border: solid 2px blue;
 }
 
 .story-panel-3 .content {

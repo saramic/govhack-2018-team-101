@@ -2,17 +2,25 @@ import { Component } from "react";
 import { Modal, Button } from "antd";
 import React from "react";
 import "../Story.css";
+import CardDataSource from "./CardDataSource";
 
-const Card = ({ visible, data }) => {
+const Card = ({ visible, data, closeModal }) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
-      <div class="card__side card__front">
+      <div className="card__side card__front">
+        <h2>Do you want to see more penguins?</h2>
         <img src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
       </div>
-      <div class="card__back">
+      <div className="card__back">
         <img src="https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg" />
 
-        <Button onClick>Submit</Button>
+        <div className="card__data">
+          <p>Test</p>
+
+          <CardDataSource />
+
+          <Button onClick={closeModal}>Submit</Button>
+        </div>
       </div>
     </div>
   );
@@ -29,12 +37,17 @@ export default class AddStoryPanel extends Component {
 
   hideForm = () => {
     this.setState({
-      visible: false
+      visible: false,
+      frontShown: true
     });
   };
 
   showCardFront = () => {
     this.setState({ frontShown: false });
+  };
+
+  showNextStory = () => {
+    console.log("SHOW NEXT STORY IN QUEUE");
   };
 
   render = () => {
@@ -59,7 +72,7 @@ export default class AddStoryPanel extends Component {
           onCancel={this.hideForm}
           footer={null}
         >
-          <Card visible={this.state.frontShown} />
+          <Card visible={this.state.frontShown} closeModal={this.hideForm} />
 
           {this.state.frontShown ? (
             <div>

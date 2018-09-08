@@ -5,14 +5,14 @@ import "../Story.css";
 import CardDataSource from "./CardDataSource";
 import {StoryPanel} from '../ViewStoryApp';
 
-const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
+const Card = ({ visible, onAcceptStory, closeModal, nextBestSegue, nextPanel}) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
-        <StoryPanel image={nextPanel.image} panelType={0} segue={null} template={segue} />
+        <StoryPanel image={nextPanel() ? nextPanel().image : ''} panelType={0} segue={null} template={nextBestSegue()} />
       </div>
       <div className="card__back">
-        <img alt="need an alt" src={nextPanel.image} />
+        <img alt="need an alt" src={nextPanel() ? nextPanel().image : ''} />
 
         <div className="card__data">
           <p>Test</p>
@@ -20,7 +20,7 @@ const Card = ({ visible, onAcceptStory, closeModal, segue, nextPanel}) => {
           <CardDataSource />
 
           <Button onClick={() => {
-            onAcceptStory(nextPanel.id)
+            onAcceptStory(nextPanel() ? nextPanel().id : 'school')
             closeModal()
           }
           }>Submit</Button>
@@ -81,7 +81,7 @@ export default class AddStoryPanel extends Component {
             visible={this.state.frontShown}
             closeModal={this.hideForm}
             onAcceptStory={this.props.onAcceptStory}
-            segue={this.props.segue}
+            nextBestSegue={this.props.nextBestSegue}
             nextPanel={this.props.nextPanel}/>
 
           {this.state.frontShown ? (

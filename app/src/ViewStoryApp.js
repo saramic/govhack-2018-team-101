@@ -13,7 +13,7 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
   const getStoryElement = (storyPanel) => {
-    return storyElements.find(element => element.id === storyPanel.id);
+    return storyPanel ? storyElements.find(element => element.id === storyPanel.id) : null;
   };
 
   // We have some basic details of the story panel (an ID and the panel type), but we need
@@ -40,6 +40,16 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
     return nextElementSegueDetails ? nextElementSegueDetails.segue : null;
   };
 
+  const nextBestSegue = () => {
+    const nextElementsList = getStoryElement(storyPanels[storyPanels.length-1]).nextElements
+    return nextElementsList.length > 0 ? nextElementsList[0].segue : 'There is no segue - start message?'
+  }
+
+  const nextBestPanel = () => {
+    const nextElementsList = getStoryElement(storyPanels[storyPanels.length-1]).nextElements
+    return nextElementsList.length > 0 ? getStoryElement(nextElementsList[0]) : storyElements[0] // TODO get random of storyElements
+  }
+
   return (
     <div className="story">
         <h1>{character} in {location}...</h1>
@@ -54,8 +64,8 @@ const Story = ({storyElements, character, location, storyPanels, acceptStoryActi
                 <AddStoryPanel
                     onDeclineStory={() => {}}
                     onAcceptStory={(id) => acceptStoryAction(id)}
-                    segue={getStoryElement(storyPanels[storyPanels.length-1]).nextElements[0].segue}
-                    nextPanel={getStoryElement(getStoryElement(storyPanels[storyPanels.length-1]).nextElements[0])}/>
+                    nextBestSegue={nextBestSegue}
+                    nextPanel={nextBestPanel}/>
             </Col>
         </Row>
     </div>

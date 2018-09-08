@@ -141,12 +141,12 @@ const storyElements = {
     },
     {
       id: "multiculturalism",
-      template: "[NAME] ",
-      image: "",
+      template: "I know many people in my community that are not born in Australia",
+      image: "https://www.amf.net.au/library/uploads/images/The_Many_Voices_of_Young_Australians.jpg",
       dataSource: {
-        name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
+        name: '2016 Community Profiles',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/269',
+        link: 'https://www.multicultural.vic.gov.au/population-and-migration/victorias-diversity/community-profiles-2016-census',
         visualisation: 'N/A',
       },
       nextElements: [

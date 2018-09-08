@@ -162,6 +162,11 @@ h1 {
  * Modal dialog for appending to story.
  */
 
+.story-modal.ant-modal {
+  width: 680px !important;
+  max-width: 90%;
+}
+
 .story-modal .ant-modal-content {
   border-radius: 0;
   box-shadow: black 0 4px 8px;
@@ -199,6 +204,12 @@ h1 {
   height: 100%;
   margin: 0;
   border: none; /* We have a border on our card element, so it isn't required here too */
+}
+
+.story-modal .card__back .story-panel {
+  width: 50%;
+  height: auto;
+  margin: 12px;
 }
 
 .story-modal .ant-modal-body {

@@ -8,11 +8,14 @@ import {StoryPanel} from '../ViewStoryApp';
 const Card = ({ visible, onAcceptStory, closeModal, nextBestSegue, nextPanel}) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
+
       <div className="card__side card__front">
         <StoryPanel image={nextPanel() ? nextPanel().image : ''} panelType={0} segue={null} template={nextBestSegue()} />
       </div>
+
       <div className="card__back">
-        <img alt="need an alt" src={nextPanel() ? nextPanel().image : ''} />
+
+        <StoryPanel image={nextPanel() ? nextPanel().image : ''} panelType={0} segue={null} template={nextPanel() ? nextPanel().template : ''} />
 
         <div className="card__data">
           <p>Test</p>

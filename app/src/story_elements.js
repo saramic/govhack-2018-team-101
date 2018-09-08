@@ -81,13 +81,9 @@ const storyElements = {
       },
       nextElements: [
         {
-          "element": "carlton-gardens",
-          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
+          "element": "aging",
+          "segue": "as you put the recycling away you see an elderly gentleman feeding the ducks"
         },
-        {
-          "element": "soccer-fields",
-          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
-        }
       ]
     },
     {

@@ -8,18 +8,43 @@ const ViewStoryApp = (props) =>
         <Story {...props} />
     </div>;
 
-const Story = (props) => {
+const Story = ({storyElements, character, location, storyPanels}) => {
 
-  const getStoryPanelDetails = (storyPanel) =>
-    Object.assign({}, props.storyElements.find(element => element.id === storyPanel.id), {panelType: storyPanel.panelType});
+  // Given a particular panel (with an ID reference to a story element), lookup the corresponding
+  // story element from the list available to us.
+  const getStoryElement = (storyPanel) => {
+    return storyElements.find(element => element.id === storyPanel.id);
+  };
+
+  // We have some basic details of the story panel (an ID and the panel type), but we need
+  // to use the ID to lookup more substantial details from the list of content available to us.
+  const getStoryPanelDetails = (storyPanel) => {
+    return Object.assign({}, getStoryElement(storyPanel), {panelType: storyPanel.panelType});
+  };
+
+  // Based on the current story panel, see if it has another story panel next to it.
+  // If it does, do we know of a nice way to segue from one to the other?
+  const getSegue = (storyPanel, nextIndex) => {
+    if (nextIndex >= storyPanels.length) {
+      return null;
+    }
+
+    const thisElement = getStoryElement(storyPanel);
+    const nextElement = getStoryElement(storyPanels[nextIndex]);
+    if (nextElement == null || !thisElement.nextElements.hasOwnProperty(nextElement.id)) {
+      return null;
+    }
+
+    return thisElement.nextElements[nextElement.id];
+  };
 
   return (
     <div className="story">
-        <h1>{props.character} in {props.location}...</h1>
+        <h1>{character} in {location}...</h1>
         <Row gutter={12}>
-            {props.storyPanels.map(storyPanel =>
+            {storyPanels.map((storyPanel, i) =>
                 <Col span={storyPanel.panelType <= 1 ? 5 : 7}>
-                    <StoryPanel {...getStoryPanelDetails(storyPanel)} />
+                    <StoryPanel {...getStoryPanelDetails(storyPanel)} segue={getSegue(storyPanel, i + 1)} />
                 </Col>
             )}
 
@@ -34,11 +59,11 @@ const Story = (props) => {
   );
 };
 
-const StoryPanel = (props) =>
-    <div className={`story-panel story-panel-${props.panelType}`}>
+const StoryPanel = ({panelType, text, image, segue = null}) =>
+    <div className={`story-panel story-panel-${panelType}`}>
         <div className="content">
-            <span className="text">{props.text}</span>
-            <div className="image" style={{backgroundSize: 'cover', backgroundImage: 'url(' + props.image + ')'}}>
+            <span className="text">{text} {segue}</span>
+            <div className="image" style={{backgroundSize: 'cover', backgroundImage: 'url(' + image + ')'}}>
 
             </div>
         </div>

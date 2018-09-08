@@ -52,7 +52,7 @@ const defaultState = {
       image: "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
       dataSource: "http://data.vic.gov.au",
       nextElements: {
-        "philip-island-penguins": "Philip island doesn't just have penguins, it also has seals!",
+        "philip-island-seals": "Philip island doesn't just have penguins, it also has seals!",
       },
     },
     {

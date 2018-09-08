@@ -5,7 +5,11 @@
 // 3) sport recreation - Selena
 //    segue - I to play soccer at the local park
 //    I am at the local park and I see
-//
+//    At the local park I saw people playing various sports
+
+//    Kingston Heath Reserve on Farm Road, HEATHERTON 3202, Grass Soccer Field, facility is 0-5 years old, 5* rated facility, with Unisex and Umpire/Offical change rooms
+//    9 soccer field locations in Kingston, 8 of which are offering grass fields
+
 // 4) recycling - Adam
 //    segue -
 //    I saw some rubbish so I picked it up and put it into recycling
@@ -46,27 +50,23 @@ const storyElements = {
     },
     {
       id: "sport-recreation",
-      template: "[NAME] was walking past a soccer field, and saw people speaking Italian...",
-      image: "https://media.graytvinc.com/images/810*539/soccer90.jpg",
+      template: "I am playing soccer at Kingston Heath Reserve",
+      image: "http://suhc.com.au/wp-content/uploads/HinHockey-1-2014.jpg",
       dataSource: {
-        name: '2016 Community Profiles',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/269',
-        link: 'https://www.multicultural.vic.gov.au/population-and-migration/victorias-diversity/community-profiles-2016-census',
+        name: 'Sport and Recreation',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/275',
+        link: 'https://www.data.vic.gov.au/data/dataset/sport-and-recreational-facilities',
         visualisation: 'N/A',
       },
       nextElements: [
         {
-          "element": "carlton-gardens",
-          "segue": "A suburb with lots of Italians is Carlton, which also has wonderful gardens"
+          "element": "recycling",
+          "segue": "I see some rubbish and decide to recycle it"
         },
-        {
-          "element": "soccer-fields",
-          "segue": "That reminded me of the place with the most soccer fields in Melbourne - Berwick."
-        }
       ]
     },
     {
-      id: "carlton-gardens",
+      id: "recycling",
       template: "[NAME] ",
       image: "",
       dataSource: {

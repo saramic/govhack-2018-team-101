@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import {Row, Col} from 'antd';
+import {Row, Col, Modal} from 'antd';
+import AddStoryPanel from './components/AddStoryPanel';
 
 const ViewStoryApp = (props) =>
     <div className="App">
@@ -21,16 +22,6 @@ const Story = (props) =>
                 <AddStoryPanel />
             </Col>
         </Row>
-    </div>;
-
-const AddStoryPanel = () =>
-    <div className="story-panel story-panel-new">
-        <a href="#" onClick={e => e.preventDefault()}>
-            <div className="content">
-                <div className="add icon">+</div>
-                <div className="add text">Add</div>
-            </div>
-        </a>
     </div>;
 
 const StoryPanel = (props) =>

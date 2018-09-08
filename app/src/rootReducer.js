@@ -1,20 +1,26 @@
 const defaultState = {
   screen: "view-story" /* or 'build-story' */,
   buildStory: {
-    newStories: [
-      // TODO this is the thing that needs to be auto generated
-      "Park bench",
-      "Train Station",
-      "Park",
-      "Someone speaking Italian",
-      "It started to rain"
-    ],
-    stories: [
-      "I start at my school Collingwood College",
-      "I decide to go to the near by park",
-      "I find a park bench so I take a seat and read my book",
-      "I hear some kids playing soccer and they are talking Polish",
-      "I follow their language and it takes me to Glen Eira, the biggest grouping of people who speak Polish"
+    availableStoryPanels: [
+      {
+        template: "[LOCATION] has heaps of grown ups to look after us.",
+        image:
+            "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
+        dataSource: "http://data.gov.au",
+      },
+      {
+        text: "Before [LOCATION] was [LOCATION], it was known as [INDIGENOUS_LOCATION]. Instead of English they spoke [INDIGENOUS_LANGUAGE]",
+        image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg",
+        dataSource: "http://data.vic.gov.au",
+        panelType: Math.round(Math.random() * 3),
+      },
+      {
+        template: "[LOCATION] has heaps of grown ups to look after us.",
+        image:
+            "https://s3-ap-southeast-2.amazonaws.com/previews.dams.me/667/image/large/000/000/000/000/000000000000071/132952l.jpg",
+        dataSource: "http://data.gov.au",
+      },
     ]
   },
   viewStory: {

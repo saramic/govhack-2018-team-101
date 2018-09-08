@@ -105,8 +105,16 @@ const defaultState = {
 };
 
 const reducer = (state = defaultState, action) => {
-  if (action.type === "SWITCH_SCREEN") {
-    return Object.assign({}, state, { screen: action.screen });
+  if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
+    // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
+    // const potentialNextStories = lastStoryItem === null ? state.storyElements :
+
+    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
+    const newPanel = Object.assign({}, newElement, {panelType: Math.round(Math.random() * 3)});
+
+    return Object.assign({}, state, {
+      storyPanels: state.storyPanels.concat(newPanel)
+    });
   }
   return state;
 };

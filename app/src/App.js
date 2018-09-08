@@ -8,7 +8,9 @@ import Home from "./pages/Home";
 const ConnectedViewStoryApp = connect(
   state => state,
   {
-    onShowProposedStoryPanel: actions.showProposedStoryPanel
+    onShowProposedStoryPanel: actions.showProposedStoryPanel,
+    onAcceptProposedStoryPanel: actions.acceptProposedStoryPanel,
+    onRejectProposedStoryPanel: actions.rejectProposedStoryPanel,
   }
 )(ViewStoryApp);
 

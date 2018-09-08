@@ -6,6 +6,7 @@ import AddStoryPanel from './components/AddStoryPanel';
 const ViewStoryApp = (props) =>
     <div className="App">
         <Story {...props} />
+        <button onClick={props.onShowProposedStoryPanel}>Add to story</button>
     </div>;
 
 const Story = ({storyElements, character, location, storyPanels}) => {

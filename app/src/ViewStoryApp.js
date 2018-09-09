@@ -142,17 +142,15 @@ class Story extends Component {
         >
           <div className="confirm-modal">
             <Icon
-              type="smile"
+              type="heart"
               style={{
-                fontSize: "48px",
+                fontSize: "200px",
                 color: "#08c",
                 textAlign: "center",
                 paddingBottom: "20px"
               }}
             />
-            <p>
-              Thanks for creating your story! Here is the link to your story:
-            </p>
+            <p>Thanks for sharing your story!</p>
 
             <Button
               href={
@@ -160,8 +158,13 @@ class Story extends Component {
                 this.props.storyPanels.map(panel => panel.id).join(",")
               }
               type="primary"
+              className="confirm-share-button"
             >
-              My story
+              View my story
+            </Button>
+
+            <Button type="dashed" href="/credits" target="_blank">
+              Data Sources
             </Button>
           </div>
         </Modal>

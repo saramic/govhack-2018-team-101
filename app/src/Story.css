@@ -96,3 +96,7 @@
 .confirm-image {
   max-width: 100%;
 }
+
+.confirm-share-button {
+  margin-right: 10px;
+}

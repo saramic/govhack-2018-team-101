@@ -45,7 +45,54 @@ const defaultState = {
   ]
 };
 
+/**
+ * Given a list of all possible story elements, choose one to show to the use next (i.e. via a tinder card).
+ * If we have some planned segues in mind, then pass "limitToIds" to ensure we only choose from those story elements.
+ */
+const chooseRandomStoryElement = (elements, limitToIds = []) => {
+
+  // Search all the elements, or only search a subset of elements.
+  let availableElements = (limitToIds == null || limitToIds.length === 0)
+    ? elements
+    : elements.filter(e => limitToIds.find(e1 => e1 === e.id) != null);
+
+  if (availableElements.length === 0) {
+    // Uh oh... Choose a random one from all just to make sure we get something.
+    availableElements = elements;
+  }
+
+  return availableElements[parseInt(Math.random() * (availableElements.length - 1))];
+};
+
+/**
+ * Looks at the last story panel in action, and decides what eligible segues we have available (if any). If none are
+ * avaialble, we'll use any random story element.
+ */
+const showNewProposedStoryPanel = (state, excludeId = null) => {
+
+  const availableElements = excludeId == null ? state.storyElements : state.storyElements.filter(e => e.id !== excludeId);
+
+  let newElement = null;
+
+  // At the start, choose any old story.
+  if (state.storyPanels.length === 0) {
+    newElement = chooseRandomStoryElement(availableElements);
+  } else {
+    const lastStoryItem = state.storyPanels[state.storyPanels.length - 1];
+    const lastElement = state.storyElements.find(e => e.id === lastStoryItem.id);
+    const potentialSegues = lastElement.nextElements == null ? [] : lastElement.nextElements.map(e => e.id);
+    newElement = chooseRandomStoryElement(availableElements, potentialSegues)
+  }
+
+  if (newElement == null) {
+    newElement = chooseRandomStoryElement(availableElements)
+  }
+
+  return newElement;
+};
+
 const reducer = (state = defaultState, action) => {
+
   if (action.type == "START_STORY") {
     const ids = action.serializedStory.split(",");
     console.log(ids);
@@ -58,25 +105,17 @@ const reducer = (state = defaultState, action) => {
     //   })
     // });
   } else if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
-    // TODO: Correctly limit results to those allowed by the `nextElements` thing.
-    // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
-    // const potentialNextStories = lastStoryItem === null ? state.storyElements :
 
-    // const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
-    const newElement = state.storyElements.find(e => e.id === "aging");
-
-    return Object.assign({}, state, {proposedStoryAddition: newElement});
+    return Object.assign({}, state, {proposedStoryAddition: showNewProposedStoryPanel(state)});
 
   } else if (action.type === "CLOSE_PROPOSED_STORY_PANEL") {
 
     return Object.assign({}, state, {proposedStoryAddition: null});
 
   } else if (action.type === "REJECT_PROPOSED_STORY_PANEL") {
-    const newElement =
-      state.storyElements[
-        parseInt(Math.random() * (state.storyElements.length - 1))
-      ];
-    return Object.assign({}, state, { proposedStoryAddition: newElement });
+
+    return Object.assign({}, state, {proposedStoryAddition: showNewProposedStoryPanel(state, state.proposedStoryAddition.id)});
+
   } else if (action.type === "ACCEPT_PROPOSED_STORY_PANEL") {
     const newElement = state.proposedStoryAddition;
     const newPanel = Object.assign({}, newElement, {

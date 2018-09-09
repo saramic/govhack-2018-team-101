@@ -71,13 +71,13 @@ const storyElements = {
       nextElements: [
         {
           id: "recycling",
-          "segue": "I see some rubbish and decide to recycle it"
+          "segue": "I see some soft drink cans on the ground, so I pick them up and throw them into a recycling bin nearby."
         },
       ]
     },
     {
       id: "recycling",
-      template: "You spot some soft drink cans on the ground, so you pick them up and throw them into a recycling bin nearby. You learnt at school that each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km in your family car!",
+      template: "Each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km!",
       image: "",
       dataSource: {
         name: 'LCA kerbside recycling calculator',

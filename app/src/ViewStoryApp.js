@@ -16,9 +16,12 @@ class Story extends Component {
   }
 
   componentDidMount() {
-    const storiesUrl = this.props.match.params.stories;
+    const allStories = this.props.storyElements.map(e => e.id).join(',');
+    const storiesUrl = this.props.match.path === '/all' ? allStories : this.props.match.params.stories;
 
-    storiesUrl != null ? this.props.onStart(storiesUrl) : null;
+    if (storiesUrl != null) {
+      this.props.onStart(storiesUrl)
+    }
   }
 
   //      {

@@ -152,9 +152,8 @@ const storyElements = {
     },
     {
       id: "trees",
-      template: "I want to be artistic and graffiti a mural",
-      image:
-        "https://lph5i1b6c053kq7us26bdk75-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
+      template: "There are some trees",
+      image: "https://lph5i1b6c053kq7us26bdk75-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
       dataSource: {
         name: "Melbourne Urban Forest Visual",
         hackerspace_id: "",

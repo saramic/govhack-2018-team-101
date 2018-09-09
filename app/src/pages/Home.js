@@ -9,8 +9,8 @@ const Home = () => {
   return <div className="background">
     <div className="home-panel">
       <h1>My Local Story</h1>
-      <p class="subtitle">Telling real stories, for real people, with real data.</p>
-      <Link to="/view" type="primary" className="ant-btn ant-btn-default">Create My Story</Link>
+      <p class="subtitle">Telling real stories, for real kids, with real data.</p>
+      <Button href="/view" type="primary">Create My Story</Button>
     </div>
   </div>
 };

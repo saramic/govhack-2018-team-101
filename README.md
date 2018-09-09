@@ -1,5 +1,12 @@
 # GovHack 2018 - team 101
 
+## My Local Story
+
+  * [My Local Story - my-local-story.herokuapp.com](https://my-local-story.herokuapp.com/)
+  * [My Local Story - GovHack Hackerspace](https://2018.hackerspace.govhack.org/projects/my_local_story)
+  * [My Local Story - YouTube submission]()
+
+
 ## Talk
 
 ### Introduction
@@ -23,7 +30,7 @@ So, let's get started.
 
 11 year old Matilda lives in the seaside City of Kingston where her story begins...
 
-She goes to Parkdale primary school and has already this to the first frame of her comic
+She goes to Parkdale primary school and has already added this to the first frame of her comic
 book story
 
 Clicking on the info button reveals the data source of this part of the story - in this

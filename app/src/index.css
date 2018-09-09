@@ -174,7 +174,7 @@ h1 {
 .story-modal.ant-modal {
   width: 750px !important;
   max-width: 90%;
-  top: 20px;
+  top: 10%;
 }
 
 .story-modal .ant-modal-content {

@@ -5,6 +5,7 @@ import * as actions from "./actions";
 import { connect } from "react-redux";
 import Home from "./pages/Home";
 import Credits from "./pages/Credits";
+import Technology from "./pages/Technology";
 
 const ConnectedViewStoryApp = connect(
   state => state,
@@ -30,6 +31,7 @@ const App = props => (
         <Route path="/view" component={ConnectedViewStoryApp} />
         <Route path="/all" component={ConnectedViewStoryApp} />
         <Route path="/credits" component={Credits} />
+        <Route path="/technology" component={Technology} />
       </Switch>
     </Router>
   </div>

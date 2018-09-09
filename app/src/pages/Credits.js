@@ -117,15 +117,3 @@ const Credits = () => {
 };
 
 export default Credits;
-
-// <ul>
-//   <li>School Locations 'https://2018.hackerspace.govhack.org/data_sets/295' 'https://www.data.vic.gov.au/data/dataset/school-locations-2018'</li>
-//   <li>Sport and Recreation Facilities 'https://2018.hackerspace.govhack.org/data_sets/275' 'https://www.data.vic.gov.au/data/dataset/sport-and-recreational-facilities'</li>
-//   <li>LCA kerbside recycling calculator 'https://2018.hackerspace.govhack.org/data_sets/274' 'https://www.data.vic.gov.au/data/dataset/lca-kerbside-recycling-calculator'</li>
-//   <li>Aged Care 'https://2018.hackerspace.govhack.org/data_sets/346' 'https://www.aihw.gov.au/reports/older-people/older-australia-at-a-glance/contents/summary'</li>
-//   <li>Crime Stats Agency 'https://2018.hackerspace.govhack.org/data_sets/200' 'https://www.crimestatistics.vic.gov.au/crime-statistics/latest-crime-data'</li>
-//   <li>Melbourne Urban Forest Visual 'https://data.melbourne.vic.gov.au/'</li>
-//   <li>2016 Community Profiles 'https://2018.hackerspace.govhack.org/data_sets/269' 'https://www.multicultural.vic.gov.au/population-and-migration/victorias-diversity/community-profiles-2016-census'</li>
-//   <li>2018 Employment Projections 'https://2018.hackerspace.govhack.org/data_sets/116' 'http://lmip.gov.au/default.aspx?LMIP/GainInsights/EmploymentProjections'</li>
-//   <li>Indigenous Health and Welfare services 'https://2018.hackerspace.govhack.org/data_sets/354' 'https://www.aihw.gov.au/reports-statistics/health-welfare-services/indigenous-health-welfare-services/data'</li>
-// </ul>

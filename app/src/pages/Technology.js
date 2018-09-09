@@ -115,6 +115,30 @@ const Technology = () => {
                                 cover={<img alt="example" src="/images/lols/e4affa1dc0a.gif" />}>
                             </Card>
                         </Col>
+                        <Col span={8}>
+                            <Card
+                                style={{ margin: '10px auto' }}
+                                cover={<img alt="example" src="/images/lols/f503a0e74b6.gif" />}>
+                            </Card>
+                        </Col>
+                        <Col span={8}>
+                            <Card
+                                style={{ margin: '10px auto' }}
+                                cover={<img alt="example" src="/images/lols/f09abf7fd1b.gif" />}>
+                            </Card>
+                        </Col>
+                        <Col span={8}>
+                            <Card
+                                style={{ margin: '10px auto' }}
+                                cover={<img alt="example" src="/images/lols/a0cc585da0b.gif" />}>
+                            </Card>
+                        </Col>
+                        <Col span={8}>
+                            <Card
+                                style={{ margin: '10px auto' }}
+                                cover={<img alt="example" src="/images/lols/caae3e28312.gif" />}>
+                            </Card>
+                        </Col>
                     </Row>
                 </div>
             </div>

@@ -79,7 +79,7 @@ class Story extends Component {
         <Row gutter={12}>
           {this.props.storyPanels.map((storyPanel, i) => (
             <Col
-              className="story-panel-wrapper"
+              className={`story-panel-wrapper ${this.props.published ? 'fade-in-story-item' : ''}`}
               span={storyPanel.panelType <= 1 ? 5 : 7}
             >
               <StoryPanel
@@ -108,7 +108,7 @@ class Story extends Component {
           }
 
           {!this.props.published ? (
-            <Col span={3}>
+            <Col span={3} className={this.props.published ? 'fade-in-story-item' : ''}>
               <AddStoryPanel
                 lastStoryPanel={
                   this.props.storyPanels == null ||

@@ -16,3 +16,14 @@
 .lols {
     margin-top: 100px;
 }
+
+
+.lols .ant-card-cover img {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+.lols .ant-card-body {
+    padding: 0px;
+}

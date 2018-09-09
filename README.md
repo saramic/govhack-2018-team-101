@@ -42,7 +42,7 @@ to the recycling data source - amazing.
 
 Let's click on the + add button and see what's next in Matilda's story.
 
-Add a card
+Add a car
 
 Reject some cards
 

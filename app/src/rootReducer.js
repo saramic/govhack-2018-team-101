@@ -29,20 +29,7 @@ const defaultState = {
   /**
    * Test images are from the VisitVictoria open data portal: https://contenthub.visitvictoria.com/.
    */
-  storyPanels: [
-    {
-      id: "school",
-      panelType: Math.round(Math.random() * 3)
-    },
-    {
-      id: "sport-recreation",
-      panelType: Math.round(Math.random() * 3)
-    },
-    {
-      id: "recycling",
-      panelType: Math.round(Math.random() * 3)
-    }
-  ]
+  storyPanels: []
 };
 
 /**

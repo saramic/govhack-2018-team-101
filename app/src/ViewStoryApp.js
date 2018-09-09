@@ -71,11 +71,15 @@ class Story extends Component {
         </h1>
         <Row gutter={12}>
           {this.props.storyPanels.map((storyPanel, i) => (
-            <Col span={storyPanel.panelType <= 1 ? 5 : 7}>
+            <Col className="story-panel-wrapper" span={storyPanel.panelType <= 1 ? 5 : 7}>
               <StoryPanel
                 {...this.getStoryPanelDetails(storyPanel)}
                 segue={this.getSegue(storyPanel, i + 1)}
               />
+              <Button
+                className="story-panel-info"
+                shape="circle"
+                icon="question" />
             </Col>
           ))}
 

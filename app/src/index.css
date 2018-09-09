@@ -247,3 +247,19 @@ h1 {
   height: auto;
   font-size: 15pt;
 }
+
+.story-panel-wrapper {
+  position: relative;
+}
+
+.story-panel-wrapper .story-panel-info {
+  display: none;
+}
+
+.story-panel-wrapper:hover .story-panel-info {
+  display: block;
+  opacity: 0.7;
+  position: absolute;
+  left: 32px;
+  bottom: 24px;
+}

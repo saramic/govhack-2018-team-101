@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 
 body {
   margin: 0;
   padding: 0;
 }
 
-body, .ant-modal-content {
-  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=fcfaf7ff&noise=e6ddd6&density=22&opacity=38');
+body,
+.ant-modal-content {
+  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=fcfaf7ff&noise=e6ddd6&density=22&opacity=38");
 }
 
 h1 {
-  font-family: 'Permanent Marker', cursive !important;
+  font-family: "Permanent Marker", cursive !important;
 }
 
 .story {
@@ -19,7 +20,7 @@ h1 {
 }
 
 .story-panel {
-  font-family: 'Permanent Marker', cursive !important;
+  font-family: "Permanent Marker", cursive !important;
 }
 
 .story-panel {
@@ -31,9 +32,11 @@ h1 {
 /**
  * Comic book texture around the border from https://codepen.io/jjelizondo/pen/imDzk.
  */
-.story-panel, .story-modal .ant-modal-content {
+.story-panel,
+.story-modal .ant-modal-content {
   border: 0.2em solid transparent;
-  border-image: url('http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg') 27 27 27 27 round stretch;
+  border-image: url("http://emptyeasel.com/wp-content/uploads/2012/11/creatingtexture2-carrielewis.jpg")
+    27 27 27 27 round stretch;
 }
 
 .story-panel .text {
@@ -135,7 +138,7 @@ h1 {
 .story-panel-2 .text {
   max-width: 35%;
   height: 100%;
-  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57')
+  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57");
 }
 
 /**
@@ -157,9 +160,8 @@ h1 {
 .story-panel-3 .text {
   max-width: 35%;
   height: 100%;
-  background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57')
+  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57");
 }
-
 
 /**
  * Modal dialog for appending to story.
@@ -168,6 +170,7 @@ h1 {
 .story-modal.ant-modal {
   width: 680px !important;
   max-width: 90%;
+  top: 20px;
 }
 
 .story-modal .ant-modal-content {
@@ -195,7 +198,8 @@ h1 {
   border-color: orange;
 }
 
-.story-modal .btn-accept, .story-modal .btn-reject {
+.story-modal .btn-accept,
+.story-modal .btn-reject {
   width: 64px;
   height: 64px;
   font-size: 22pt;

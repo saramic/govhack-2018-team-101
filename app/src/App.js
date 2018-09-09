@@ -13,7 +13,8 @@ const ConnectedViewStoryApp = connect(
     onAcceptProposedStoryPanel: actions.acceptProposedStoryPanel,
     onRejectProposedStoryPanel: actions.rejectProposedStoryPanel,
     onStart: actions.startStory,
-    acceptStoryAction: actions.acceptStoryAction
+    acceptStoryAction: actions.acceptStoryAction,
+    onCloseAddStoryPanel: actions.closeAddStoryPanel,
   }
 )(ViewStoryApp);
 

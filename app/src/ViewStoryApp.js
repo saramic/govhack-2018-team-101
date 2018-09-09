@@ -119,6 +119,16 @@ class Story extends Component {
           {!this.props.published ? (
             <Col span={3}>
               <AddStoryPanel
+                lastStoryPanel={
+                  this.props.storyPanels == null ||
+                  this.props.storyPanels.length === 0
+                    ? null
+                    : this.getStoryPanelDetails(
+                        this.props.storyPanels[
+                          this.props.storyPanels.length - 1
+                        ]
+                      )
+                }
                 proposedStoryAddition={this.props.proposedStoryAddition}
                 onShowProposedStoryPanel={this.props.onShowProposedStoryPanel}
                 onRejectProposedStoryPanel={
@@ -128,6 +138,7 @@ class Story extends Component {
                   customText = null,
                   stickers = null
                 ) => this.props.onAcceptProposedStoryPanel()}
+                onCloseAddStoryPanel={this.props.onCloseAddStoryPanel}
               />
             </Col>
           ) : null}

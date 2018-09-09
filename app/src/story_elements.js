@@ -107,7 +107,7 @@ const storyElements = {
       template: "[NAME] aging",
       image: "https://i.pinimg.com/originals/a7/9f/18/a79f18003de9b41dc90361e97ffa835a.jpg",
       dataSource: {
-        name: '',
+        name: 'Aged care',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/346',
         link: 'https://www.aihw.gov.au/reports/older-people/older-australia-at-a-glance/contents/summary',
         visualisation: 'N/A',
@@ -174,9 +174,9 @@ const storyElements = {
       template: "[NAME] gender-equality",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/NYC_Dyke_March_2011.jpg/1599px-NYC_Dyke_March_2011.jpg",
       dataSource: {
-        name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
+        name: 'Average hourly earnings of female and male employees by occupation',
+        hackerspace_id: null,
+        link: 'https://data.gov.au/dataset/average-hourly-earnings-of-female-and-male-employees-by-occupation',
         visualisation: 'N/A',
       },
       nextElements: [
@@ -208,7 +208,7 @@ const storyElements = {
       template: "[NAME] indigenous",
       image: "https://cdn.newsapi.com.au/image/v1/6de41d261846a75fee88dcf92a67efc9",
       dataSource: {
-        name: '',
+        name: 'Indigenous health & welfare services',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/354',
         link: 'https://www.aihw.gov.au/reports-statistics/health-welfare-services/indigenous-health-welfare-services/data',
         visualisation: 'N/A',

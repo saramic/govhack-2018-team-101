@@ -2,7 +2,7 @@ import { Component } from "react";
 import { Modal, Button } from "antd";
 import React from "react";
 import "../Story.css";
-import CardDataSource from "./CardDataSource";
+import DataVisualization from "./DataVisualization";
 import { StoryPanel } from "../ViewStoryApp";
 
 const Card = ({
@@ -11,7 +11,8 @@ const Card = ({
   closeModal,
   onAcceptProposedStoryPanel,
   lastStoryPanel,
-  proposedStoryAddition
+  proposedStoryAddition,
+  showVisualisation
 }) => {
   let segue = null;
   if (lastStoryPanel != null && lastStoryPanel.nextElements != null) {
@@ -43,18 +44,32 @@ const Card = ({
         />
 
         <div className="card__data">
-          <p>Test</p>
+          <h2>{proposedStoryAddition.template}</h2>
 
-          <CardDataSource />
+          {/* <CardDataSource data={proposedStoryAddition.dataSource} /> */}
 
-          <Button
-            onClick={() => {
-              closeModal();
-              onAcceptProposedStoryPanel();
-            }}
-          >
-            Submit
-          </Button>
+          <p>{proposedStoryAddition.dataSource.name}</p>
+          <p>{proposedStoryAddition.dataSource.hackerspace_id}</p>
+          <p>{proposedStoryAddition.dataSource.link}</p>
+
+          <div className="button-container">
+            <Button
+              onClick={showVisualisation}
+              className="learn-more-button"
+              type="dashed"
+            >
+              Learn more
+            </Button>
+            <Button
+              onClick={() => {
+                closeModal();
+                onAcceptProposedStoryPanel();
+              }}
+              type="primary"
+            >
+              Add to story
+            </Button>
+          </div>
         </div>
       </div>
     </div>
@@ -62,7 +77,7 @@ const Card = ({
 };
 
 export default class AddStoryPanel extends Component {
-  state = { frontShown: true };
+  state = { frontShown: true, side: "card" };
 
   hideForm = () => {
     this.setState({
@@ -76,6 +91,32 @@ export default class AddStoryPanel extends Component {
 
   showNextStory = () => {
     this.props.onRejectProposedStoryPanel();
+  };
+
+  showVisualisation = () => {
+    this.setState({ side: "viz" });
+  };
+
+  getCardToDisplay = side => {
+    switch (side) {
+      case "viz":
+        return (
+          <DataVisualization
+            data={this.props.proposedStoryAddition.dataSource}
+          />
+        );
+      default:
+        return (
+          <Card
+            visible={this.state.frontShown}
+            closeModal={this.hideForm}
+            lastStoryPanel={this.props.lastStoryPanel}
+            proposedStoryAddition={this.props.proposedStoryAddition}
+            onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel}
+            showVisualisation={this.showVisualisation}
+          />
+        );
+    }
   };
 
   render = () => {
@@ -106,13 +147,7 @@ export default class AddStoryPanel extends Component {
             // bodyStyle={{ height: "100vh" }}
             footer={null}
           >
-            <Card
-              visible={this.state.frontShown}
-              closeModal={this.hideForm}
-              lastStoryPanel={this.props.lastStoryPanel}
-              proposedStoryAddition={this.props.proposedStoryAddition}
-              onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel}
-            />
+            {this.getCardToDisplay(this.state.side)}
 
             {this.state.frontShown ? (
               <div>

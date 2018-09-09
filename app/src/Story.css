@@ -17,6 +17,7 @@
 .card__data {
   flex: 1;
   padding: 1em;
+  max-width: 50%;
 }
 
 .card__back,
@@ -73,4 +74,8 @@
   position: fixed !important;
   bottom: 1em;
   right: 1em;
+}
+
+.learn-more-button {
+  padding-right: 10px;
 }

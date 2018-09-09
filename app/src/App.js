@@ -4,6 +4,7 @@ import ViewStoryApp from "./ViewStoryApp";
 import * as actions from "./actions";
 import { connect } from "react-redux";
 import Home from "./pages/Home";
+import Credits from "./pages/Credits";
 
 const ConnectedViewStoryApp = connect(
   state => state,
@@ -11,7 +12,7 @@ const ConnectedViewStoryApp = connect(
     onShowProposedStoryPanel: actions.showProposedStoryPanel,
     onAcceptProposedStoryPanel: actions.acceptProposedStoryPanel,
     onRejectProposedStoryPanel: actions.rejectProposedStoryPanel,
-    acceptStoryAction: actions.acceptStoryAction,
+    acceptStoryAction: actions.acceptStoryAction
   }
 )(ViewStoryApp);
 
@@ -24,6 +25,7 @@ const App = props => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/view" component={ConnectedViewStoryApp} />
+        <Route path="/credits" component={Credits} />
       </Switch>
     </Router>
   </div>

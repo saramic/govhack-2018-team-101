@@ -68,3 +68,9 @@
 .card.card--back .card__back {
   transform: rotateY(0deg);
 }
+
+.share-button {
+  position: fixed !important;
+  bottom: 1em;
+  right: 1em;
+}

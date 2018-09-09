@@ -75,7 +75,7 @@ const storyElements = {
     },
     {
       id: "aging",
-      template: "[NAME] aging",
+      template: "Older people in Australia",
       image:
         "https://i.pinimg.com/originals/a7/9f/18/a79f18003de9b41dc90361e97ffa835a.jpg",
       dataSource: {
@@ -149,7 +149,7 @@ const storyElements = {
     },
     {
       id: "gender-equality",
-      template: "[NAME] gender-equality",
+      template: "Gender-equality in Australia",
       image:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/NYC_Dyke_March_2011.jpg/1599px-NYC_Dyke_March_2011.jpg",
       dataSource: {

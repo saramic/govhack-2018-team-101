@@ -110,7 +110,7 @@ const storyElements = {
         name: 'Aged care',
         hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/346',
         link: 'https://www.aihw.gov.au/reports/older-people/older-australia-at-a-glance/contents/summary',
-        visualisation: 'N/A',
+        visualisation: 'multiculturalism.gif', // in viz
       },
       nextElements: [
         // TODO these don't work as we do not support unhappy path (ie no nextElements for grafitti & trees)

@@ -4,7 +4,6 @@ import { Row, Col, Button, Modal, Icon } from "antd";
 import { Link } from "react-router-dom";
 import AddStoryPanel from "./components/AddStoryPanel";
 import * as actions from "./actions";
-import thumbsupImg from "./images/thumbsup.png";
 
 const ViewStoryApp = props => (
   <div className="App">
@@ -184,7 +183,6 @@ class Story extends Component {
                 paddingBottom: "20px"
               }}
             />
-            {/* <img className="confirm-image" src={thumbsupImg} /> */}
             <p>
               Thanks for creating your story! Here is the link to your story:
             </p>

@@ -177,8 +177,12 @@ class Story extends Component {
               View my story
             </Button>
 
-            <Button type="dashed" href="/credits" target="_blank">
+            <Button type="dashed" href="/credits" target="_blank" className="data-link-button">
               Data Sources
+            </Button>
+
+            <Button type="dashed" href="/technology" target="_blank">
+              Technology
             </Button>
           </div>
         </Modal>

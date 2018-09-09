@@ -47,7 +47,7 @@ const storyElements = {
       id: "recycling",
       template:
         "Each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km!",
-      image: "https://www.maxpixel.net/static/photo/1x/Eat-Empty-Cans-Tin-Cans-Canning-Cans-Corn-Food-1078628.jpg",
+      image: "",
       dataSource: {
         name: "LCA kerbside recycling calculator",
         hackerspace_id: "https://2018.hackerspace.govhack.org/data_sets/274",
@@ -163,7 +163,7 @@ const storyElements = {
       nextElements: [
         {
           id: "profession",
-          segue: "segue to profession"
+          segue: "What do you want to do when you grow up?"
         }
       ]
     },
@@ -182,13 +182,13 @@ const storyElements = {
       nextElements: [
         {
           id: "indigenous",
-          segue: "segue to indigenous"
+          segue: "Do indigenous Australians have the same opportunities?"
         }
       ]
     },
     {
       id: "indigenous",
-      template: "[NAME] indigenous",
+      template: "Social and Emotional Wellbeing of indigenous Australians",
       image:
         "https://cdn.newsapi.com.au/image/v1/6de41d261846a75fee88dcf92a67efc9",
       dataSource: {

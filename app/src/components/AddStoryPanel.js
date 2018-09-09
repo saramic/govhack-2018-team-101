@@ -85,7 +85,8 @@ export default class AddStoryPanel extends Component {
 
   hideForm = () => {
     this.setState({
-      frontShown: true
+      frontShown: true,
+      side: "card"
     });
   };
 

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button, Modal, Icon } from "antd";
+import { Link } from "react-router-dom";
 import AddStoryPanel from "./components/AddStoryPanel";
 import * as actions from "./actions";
+import thumbsupImg from "./images/thumbsup.png";
 
 const ViewStoryApp = props => (
   <div className="App">
@@ -13,14 +15,19 @@ const ViewStoryApp = props => (
 class Story extends Component {
   constructor(props) {
     super(props);
+
+    this.state = { confirmModal: false };
   }
 
   componentDidMount() {
-    const allStories = this.props.storyElements.map(e => e.id).join(',');
-    const storiesUrl = this.props.match.path === '/all' ? allStories : this.props.match.params.stories;
+    const allStories = this.props.storyElements.map(e => e.id).join(",");
+    const storiesUrl =
+      this.props.match.path === "/all"
+        ? allStories
+        : this.props.match.params.stories;
 
     if (storiesUrl != null) {
-      this.props.onStart(storiesUrl)
+      this.props.onStart(storiesUrl);
     }
   }
 
@@ -50,7 +57,7 @@ class Story extends Component {
     const element = this.getStoryElement(storyPanel);
     return Object.assign({}, element, {
       panelType: storyPanel.panelType,
-      image: element.image ? element.id + '.jpg' : null,
+      image: element.image ? element.id + ".jpg" : null
     });
   };
 
@@ -95,9 +102,7 @@ class Story extends Component {
   };
 
   shareStory = () => {
-    const currentPanelsString = this.props.storyPanels
-      .map(panel => panel.id)
-      .join();
+    this.setState({ confirmModal: true });
 
     // history.pushState(`/view/?panels=${currentPanels}`);
 
@@ -155,13 +160,46 @@ class Story extends Component {
             type="primary"
             icon="share-alt"
             size="large"
-            href={
-              "/view/" + this.props.storyPanels.map(panel => panel.id).join(",")
-            }
+            onClick={() => this.setState({ confirmModal: true })}
           >
             Share my story
           </Button>
         ) : null}
+
+        <Modal
+          title={null}
+          visible={this.state.confirmModal}
+          className="story-modal"
+          // bodyStyle={{ height: "100vh" }}
+          footer={null}
+          onCancel={() => this.setState({ confirmModal: false })}
+        >
+          <div className="confirm-modal">
+            <Icon
+              type="smile"
+              style={{
+                fontSize: "48px",
+                color: "#08c",
+                textAlign: "center",
+                paddingBottom: "20px"
+              }}
+            />
+            {/* <img className="confirm-image" src={thumbsupImg} /> */}
+            <p>
+              Thanks for creating your story! Here is the link to your story:
+            </p>
+
+            <Button
+              href={
+                "/view/" +
+                this.props.storyPanels.map(panel => panel.id).join(",")
+              }
+              type="primary"
+            >
+              My story
+            </Button>
+          </div>
+        </Modal>
       </div>
     );
   }
@@ -180,8 +218,8 @@ export const StoryPanel = ({ panelType, template, image, segue = null }) => (
           backgroundImage:
             "url(" +
             (image
-              ? '/images/cartoon/' + image
-              : '/images/cartoon/placeholder.jpg') +
+              ? "/images/cartoon/" + image
+              : "/images/cartoon/placeholder.jpg") +
             ")"
         }}
       />

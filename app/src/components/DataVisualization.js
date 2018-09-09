@@ -4,8 +4,10 @@ import { Modal, Button } from "antd";
 const DataVisualization = ({ data }) => {
   console.log(data);
   return (
-    <div>
-      <img src="" />
+    <div className="visualization">
+      {data.visualisation ? (
+        <img src={"/images/viz/" + data.visualisation} />
+      ) : null}
 
       <p>{data.name}</p>
       <p>

@@ -12,6 +12,7 @@ const ConnectedViewStoryApp = connect(
     onShowProposedStoryPanel: actions.showProposedStoryPanel,
     onAcceptProposedStoryPanel: actions.acceptProposedStoryPanel,
     onRejectProposedStoryPanel: actions.rejectProposedStoryPanel,
+    onStart: actions.startStory,
     acceptStoryAction: actions.acceptStoryAction
   }
 )(ViewStoryApp);
@@ -21,9 +22,10 @@ const ConnectedViewStoryApp = connect(
  */
 const App = props => (
   <div className="App">
-    <Router>
+    <Router onUpdate={e => console.log("Change", e)}>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/view/:stories" component={ConnectedViewStoryApp} />
         <Route path="/view" component={ConnectedViewStoryApp} />
         <Route path="/credits" component={Credits} />
       </Switch>

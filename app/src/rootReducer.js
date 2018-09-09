@@ -1,7 +1,6 @@
-import storyElementsData from './story_elements'
+import storyElementsData from "./story_elements";
 
 const defaultState = {
-
   location: "Kingston",
   character: "Matilda",
 
@@ -33,62 +32,72 @@ const defaultState = {
   storyPanels: [
     {
       id: "school",
-      panelType: Math.round(Math.random() * 3),
+      panelType: Math.round(Math.random() * 3)
     },
     {
       id: "sport-recreation",
-      panelType: Math.round(Math.random() * 3),
+      panelType: Math.round(Math.random() * 3)
     },
     {
       id: "recycling",
-      panelType: Math.round(Math.random() * 3),
-    },
-   ]
+      panelType: Math.round(Math.random() * 3)
+    }
+  ]
 };
 
 const reducer = (state = defaultState, action) => {
-
-  if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
-
+  if (action.type == "START_STORY") {
+    const ids = action.serializedStory.split(",");
+    console.log(ids);
+    // return Object.assign({}, state, {
+    //   storyPanels: ids.map(id => {
+    //     return {
+    //       id: id,
+    //       panelType: Math.round(Math.random() * 3),
+    //     }
+    //   })
+    // });
+  } else if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
     // TODO: Correctly limit results to those allowed by the `nextElements` thing.
     // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
     // const potentialNextStories = lastStoryItem === null ? state.storyElements :
 
-    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
+    const newElement =
+      state.storyElements[
+        parseInt(Math.random() * (state.storyElements.length - 1))
+      ];
 
-    return Object.assign({}, state, {proposedStoryAddition: newElement});
-
+    return Object.assign({}, state, { proposedStoryAddition: newElement });
   } else if (action.type === "REJECT_PROPOSED_STORY_PANEL") {
-
-    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
-    return Object.assign({}, state, {proposedStoryAddition: newElement});
-
+    const newElement =
+      state.storyElements[
+        parseInt(Math.random() * (state.storyElements.length - 1))
+      ];
+    return Object.assign({}, state, { proposedStoryAddition: newElement });
   } else if (action.type === "ACCEPT_PROPOSED_STORY_PANEL") {
-
     const newElement = state.proposedStoryAddition;
-    const newPanel = Object.assign({}, newElement, {panelType: Math.round(Math.random() * 3)});
+    const newPanel = Object.assign({}, newElement, {
+      panelType: Math.round(Math.random() * 3)
+    });
 
     return Object.assign({}, state, {
       proposedStoryAddition: null,
       storyPanels: state.storyPanels.concat(newPanel)
     });
-
-  } else if (action.type === 'ACCEPT_STORY') {
-
-    const storyPanel = state.storyElements.filter((storyElement) => (storyElement.id === action.id))[0]
+  } else if (action.type === "ACCEPT_STORY") {
+    const storyPanel = state.storyElements.filter(
+      storyElement => storyElement.id === action.id
+    )[0];
 
     const newStoryPanel = {
       id: storyPanel.id,
-      panelType: Math.round(Math.random() * 3),
+      panelType: Math.round(Math.random() * 3)
     };
 
     const stories = state.storyPanels.concat(newStoryPanel);
-    return Object.assign({}, state, {
-      storyPanels: stories
-    });
+    return Object.assign({}, state, { storyPanels: stories });
   }
   return state;
-
 };
 
 export default reducer;

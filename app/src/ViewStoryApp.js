@@ -44,8 +44,10 @@ class Story extends Component {
   // We have some basic details of the story panel (an ID and the panel type), but we need
   // to use the ID to lookup more substantial details from the list of content available to us.
   getStoryPanelDetails = storyPanel => {
-    return Object.assign({}, this.getStoryElement(storyPanel), {
-      panelType: storyPanel.panelType
+    const element = this.getStoryElement(storyPanel);
+    return Object.assign({}, element, {
+      panelType: storyPanel.panelType,
+      image: element.image ? element.id + '.jpg' : null,
     });
   };
 
@@ -175,8 +177,8 @@ export const StoryPanel = ({ panelType, template, image, segue = null }) => (
           backgroundImage:
             "url(" +
             (image
-              ? image
-              : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg") +
+              ? '/images/cartoon/' + image
+              : '/images/cartoon/placeholder.jpg') +
             ")"
         }}
       />

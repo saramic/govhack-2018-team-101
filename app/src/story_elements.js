@@ -143,7 +143,7 @@ const storyElements = {
     {
       id: "trees",
       template: "I want to be artistic and graffiti a mural",
-      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjPxMK4h6vdAhWPbN4KHRu-AHkQjRx6BAgBEAU&url=https%3A%2F%2Fwww.thefactsite.com%2F2017%2F10%2Fgraffiti-facts.html&psig=AOvVaw3z7IGWQEHmRc1sxchH1Ys1&ust=1536484065468492",
+      image: "https://lph5i1b6c053kq7us26bdk75-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
       dataSource: {
           name: 'Melbourne Urban Forest Visual',
           hackerspace_id: '',
@@ -217,5 +217,19 @@ const storyElements = {
     }
   ]
 };
+
+const withImages = storyElements.storyElements.filter(e => e.image != null && e.image.length > 0).concat({
+  id: 'placeholder',
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg',
+});
+
+console.log(
+  "Script to download all these images:\n\n" +
+  withImages.map(element => `wget -O ${element.id}.jpg ${element.image}`).join('\n') +
+  "\n\n" +
+  withImages.map(element => `mogrify -resize 1024x1024 ${element.id}.jpg`).join('\n') +
+  "\n\n" +
+  withImages.map(element => `~/Downloads/cartoon ${element.id}.jpg ../cartoon/${element.id}.jpg`).join('\n')
+);
 
 export default storyElements;

@@ -82,7 +82,7 @@ const storyElements = {
       id: "recycling",
       template:
         "Each tonne of aluminium recycled at the kerbside saves 17 tonnes of CO2. That's the same as planting 26 trees, or driving over 50,000km!",
-      image: "",
+      image: "https://www.maxpixel.net/static/photo/1x/Eat-Empty-Cans-Tin-Cans-Canning-Cans-Corn-Food-1078628.jpg",
       dataSource: {
         name: "LCA kerbside recycling calculator",
         hackerspace_id: "https://2018.hackerspace.govhack.org/data_sets/274",
@@ -152,9 +152,8 @@ const storyElements = {
     },
     {
       id: "trees",
-      template: "I want to be artistic and graffiti a mural",
-      image:
-        "https://lph5i1b6c053kq7us26bdk75-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
+      template: "There are some trees",
+      image: "https://lph5i1b6c053kq7us26bdk75-wpengine.netdna-ssl.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
       dataSource: {
         name: "Melbourne Urban Forest Visual",
         hackerspace_id: "",

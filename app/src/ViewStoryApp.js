@@ -30,18 +30,6 @@ class Story extends Component {
     }
   }
 
-  //      {
-  //     storyElements,
-  //   character,
-  //   location,
-  //   storyPanels,
-  //   proposedStoryAddition,
-  //   onShowProposedStoryPanel,
-  //   onAcceptProposedStoryPanel,
-  //   onRejectProposedStoryPanel,
-  //   // onInitializeRoute
-  // }  = this.props;
-
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
   getStoryElement = storyPanel => {
@@ -80,34 +68,6 @@ class Story extends Component {
     return nextElementSegueDetails ? nextElementSegueDetails.segue : null;
   };
 
-  nextBestNextElement = () => {
-    // TODO this needs to know what has been tried by changing state
-    const nextElementsList = this.getStoryElement(
-      this.props.storyPanels[this.props.storyPanels.length - 1]
-    ).nextElements;
-    return nextElementsList.length > 0 ? nextElementsList[0] : null;
-  };
-
-  nextBestSegue = () => {
-    return this.nextBestNextElement()
-      ? this.nextBestNextElement().segue
-      : "There is no segue - start message?";
-  };
-
-  nextBestPanel = () => {
-    return this.nextBestNextElement()
-      ? this.getStoryElement(this.nextBestNextElement())
-      : "There is no segue - start message?";
-  };
-
-  shareStory = () => {
-    this.setState({ confirmModal: true });
-
-    // history.pushState(`/view/?panels=${currentPanels}`);
-
-    // console.log(storyElements);
-  };
-
   render() {
     return (
       <div className="story">
@@ -117,10 +77,18 @@ class Story extends Component {
         </h1>
         <Row gutter={12}>
           {this.props.storyPanels.map((storyPanel, i) => (
-            <Col span={storyPanel.panelType <= 1 ? 5 : 7}>
+            <Col
+              className="story-panel-wrapper"
+              span={storyPanel.panelType <= 1 ? 5 : 7}
+            >
               <StoryPanel
                 {...this.getStoryPanelDetails(storyPanel)}
                 segue={this.getSegue(storyPanel, i + 1)}
+              />
+              <Button
+                className="story-panel-info"
+                shape="circle"
+                icon="question"
               />
             </Col>
           ))}
@@ -143,10 +111,9 @@ class Story extends Component {
                 onRejectProposedStoryPanel={
                   this.props.onRejectProposedStoryPanel
                 }
-                onAcceptProposedStoryPanel={(
-                  customText = null,
-                  stickers = null
-                ) => this.props.onAcceptProposedStoryPanel()}
+                onAcceptProposedStoryPanel={
+                  this.props.onAcceptProposedStoryPanel
+                }
                 onCloseAddStoryPanel={this.props.onCloseAddStoryPanel}
               />
             </Col>

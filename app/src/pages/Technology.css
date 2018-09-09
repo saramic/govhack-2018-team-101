@@ -1,0 +1,29 @@
+.ant-card-cover img {
+    height: 150px;
+    width: auto;
+    margin: 20px auto 0px;
+}
+
+.ant-card-meta-description {
+    font-size: 20px;
+}
+
+.technology {
+    padding: 12px;
+    margin: 12px;
+}
+
+.lols {
+    margin-top: 100px;
+}
+
+
+.lols .ant-card-cover img {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+.lols .ant-card-body {
+    padding: 0px;
+}

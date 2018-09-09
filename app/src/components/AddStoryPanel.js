@@ -65,6 +65,8 @@ const Card = ({
               Learn more
             </Button>
             <Button
+              className="btn-add"
+              icon="check"
               onClick={() => {
                 closeModal();
                 onAcceptProposedStoryPanel();

@@ -1,5 +1,12 @@
 # GovHack 2018 - team 101
 
+## My Local Story
+
+  * [My Local Story - my-local-story.herokuapp.com](https://my-local-story.herokuapp.com/)
+  * [My Local Story - GovHack Hackerspace](https://2018.hackerspace.govhack.org/projects/my_local_story)
+  * [My Local Story - YouTube submission]()
+
+
 ## Talk
 
 ### Introduction
@@ -23,32 +30,35 @@ So, let's get started.
 
 11 year old Matilda lives in the seaside City of Kingston where her story begins...
 
-She goes to Parkdale primary school and has already this to the first frame of her comic
-book story
+She goes to Parkdale primary school and has already added this to the first
+frame of her comic book story.
 
-Clicking on the info button reveals the data source of this part of the story - in this
-case of schools it is the data.vic School locations data. 
-Matilda can see there are a lot of schools nearby, including _____ that one of her friends
-goes to.
+Matilda loves to play ball sports. Using the sport and recreational facilities
+dataset, the app suggests a soccer field nearby. Matilda chooses to add it to
+her story.
 
-At school, Matilda loves to play ball sports and when prompted she wanted to add that to her
-story too
+[child reading] "At the park I saw some rubbish so I picked it up and I put it in the bin" -
+this brings in data from the LCA kerbside recycling calculator, helping Matilda
+understand the positive environmental impact of her actions.
 
-Outdoor sports takes Matilda to a nearby park
+Let's click on the + add button and see what's next in Matilda's story:
 
-[child reading] "At the park I saw some rubbish so I picked it up and I put it in the bin" - 
-this brings in data from ... and suddenly Matilda can link the data from nearby sports areas 
-to the recycling data source - amazing.
+Matilda encounters an elderly gentleman, which is linked to an aged care dataset,
+where she discovers that 1 in 3 older people were born in a non-English speaking country.
 
-Let's click on the + add button and see what's next in Matilda's story.
+She skips a few suggestions, choosing to follow this train of thought further.
 
-Add a car
+The next panel is linked to the 2016 census community profiles, which cover a
+wide range diverse ethnic characteristics.
 
-Reject some cards
+Matilda is asked a question about gender equality, giving her the opportunity
+to explore the average Average hourly earnings of female and male employees by occupation.
 
-Look at a deep info about data on another card multicultarlism
+The next suggestion prompts her: "What would you like to do when you grow up?"
+This panel leads her to the employment projections dataset.
 
-share
+In the final panel, Matilda is given the opportunity to learn about the social
+and emotional wellbeing of indigenous Australians.
 
 ### Wrap up
 

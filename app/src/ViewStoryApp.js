@@ -62,7 +62,7 @@ class Story extends Component {
     }
 
     const nextElementSegueDetails = thisElement.nextElements.find(
-      e => e.element === nextElement.id
+      e => e.id === nextElement.id
     );
 
     return nextElementSegueDetails ? nextElementSegueDetails.segue : null;

@@ -182,12 +182,12 @@ h1 {
   box-shadow: black 0 4px 8px;
 }
 
-.story-modal .btn-accept {
+.story-modal .btn-accept, .story-modal .btn-add {
   background-color: green;
   border-color: #006700;
 }
 
-.story-modal .btn-accept:hover {
+.story-modal .btn-accept:hover, .story-modal .btn-add:hover {
   background-color: #00d000;
   border-color: green;
 }
@@ -200,6 +200,10 @@ h1 {
 .story-modal .btn-reject:hover {
   background-color: #ffc749;
   border-color: orange;
+}
+
+.story-modal .btn-add {
+  border-width: 3px;
 }
 
 .story-modal .btn-accept,
@@ -262,4 +266,24 @@ h1 {
   position: absolute;
   left: 32px;
   bottom: 24px;
+}
+
+.card__back {
+  position: relative;
+}
+
+.card__back .button-container {
+  position: absolute;
+  bottom: 24px;
+  text-align: right;
+}
+
+.card__back .button-container button {
+  padding: 8px;
+  height: auto;
+  font-size: 14pt;
+}
+
+.card__back .btn-add {
+  margin-left: 8px;
 }

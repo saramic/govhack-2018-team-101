@@ -16,8 +16,6 @@ class Story extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match);
-
     const storiesUrl = this.props.match.params.stories;
 
     storiesUrl != null ? this.props.onStart(storiesUrl) : null;
@@ -98,7 +96,6 @@ class Story extends Component {
 
     // history.pushState(`/view/?panels=${currentPanels}`);
 
-    console.log(currentPanelsString);
     // console.log(storyElements);
   };
 
@@ -119,30 +116,35 @@ class Story extends Component {
             </Col>
           ))}
 
-          <Col span={3}>
-            <AddStoryPanel
-              proposedStoryAddition={this.props.proposedStoryAddition}
-              onShowProposedStoryPanel={this.props.onShowProposedStoryPanel}
-              onRejectProposedStoryPanel={this.props.onRejectProposedStoryPanel}
-              onAcceptProposedStoryPanel={(
-                customText = null,
-                stickers = null
-              ) => this.props.onAcceptProposedStoryPanel()}
-            />
-          </Col>
+          {!this.props.published ? (
+            <Col span={3}>
+              <AddStoryPanel
+                proposedStoryAddition={this.props.proposedStoryAddition}
+                onShowProposedStoryPanel={this.props.onShowProposedStoryPanel}
+                onRejectProposedStoryPanel={
+                  this.props.onRejectProposedStoryPanel
+                }
+                onAcceptProposedStoryPanel={(
+                  customText = null,
+                  stickers = null
+                ) => this.props.onAcceptProposedStoryPanel()}
+              />
+            </Col>
+          ) : null}
         </Row>
 
-        <Button
-          className="share-button"
-          type="primary"
-          shape="circle"
-          icon="share-alt"
-          size="large"
-          href={
-            "/view?panels=" +
-            this.props.storyPanels.map(panel => panel.id).join(",")
-          }
-        />
+        {!this.props.published ? (
+          <Button
+            className="share-button"
+            type="primary"
+            shape="circle"
+            icon="share-alt"
+            size="large"
+            href={
+              "/view/" + this.props.storyPanels.map(panel => panel.id).join(",")
+            }
+          />
+        ) : null}
       </div>
     );
   }

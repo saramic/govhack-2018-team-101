@@ -3,7 +3,7 @@ import storyElementsData from "./story_elements";
 const defaultState = {
   location: "Kingston",
   character: "Matilda",
-
+  published: false,
   proposedStoryAddition: null,
 
   /**
@@ -47,16 +47,18 @@ const defaultState = {
 
 const reducer = (state = defaultState, action) => {
   if (action.type == "START_STORY") {
+    // console.log(action.serializedStory.split(","));
     const ids = action.serializedStory.split(",");
-    console.log(ids);
-    // return Object.assign({}, state, {
-    //   storyPanels: ids.map(id => {
-    //     return {
-    //       id: id,
-    //       panelType: Math.round(Math.random() * 3),
-    //     }
-    //   })
-    // });
+    console.log("ids ", ids);
+    return Object.assign({}, state, {
+      published: true,
+      storyPanels: ids.map(id => {
+        return {
+          id: id,
+          panelType: Math.round(Math.random() * 3)
+        };
+      })
+    });
   } else if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
     // TODO: Correctly limit results to those allowed by the `nextElements` thing.
     // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];

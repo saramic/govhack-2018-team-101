@@ -1,0 +1,14 @@
+.ant-card-cover img {
+    height: 70px;
+    width: auto;
+    margin: 20px auto 0px;
+}
+
+.ant-card-meta-description a {
+    font-size: 13px;
+}
+
+.credits {
+    padding: 12px;
+    margin: 12px;
+}

@@ -241,3 +241,9 @@ h1 {
   display: inline;
   line-height: 0;
 }
+
+.ant-btn.share-button {
+  padding: 4px 16px;
+  height: auto;
+  font-size: 15pt;
+}

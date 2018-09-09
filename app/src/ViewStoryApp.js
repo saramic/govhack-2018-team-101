@@ -16,9 +16,12 @@ class Story extends Component {
   }
 
   componentDidMount() {
-    const storiesUrl = this.props.match.params.stories;
+    const allStories = this.props.storyElements.map(e => e.id).join(',');
+    const storiesUrl = this.props.match.path === '/all' ? allStories : this.props.match.params.stories;
 
-    storiesUrl != null ? this.props.onStart(storiesUrl) : null;
+    if (storiesUrl != null) {
+      this.props.onStart(storiesUrl)
+    }
   }
 
   //      {
@@ -44,8 +47,10 @@ class Story extends Component {
   // We have some basic details of the story panel (an ID and the panel type), but we need
   // to use the ID to lookup more substantial details from the list of content available to us.
   getStoryPanelDetails = storyPanel => {
-    return Object.assign({}, this.getStoryElement(storyPanel), {
-      panelType: storyPanel.panelType
+    const element = this.getStoryElement(storyPanel);
+    return Object.assign({}, element, {
+      panelType: storyPanel.panelType,
+      image: element.image ? element.id + '.jpg' : null,
     });
   };
 
@@ -148,13 +153,14 @@ class Story extends Component {
           <Button
             className="share-button"
             type="primary"
-            shape="circle"
             icon="share-alt"
             size="large"
             href={
               "/view/" + this.props.storyPanels.map(panel => panel.id).join(",")
             }
-          />
+          >
+            Share my story
+          </Button>
         ) : null}
       </div>
     );
@@ -174,8 +180,8 @@ export const StoryPanel = ({ panelType, template, image, segue = null }) => (
           backgroundImage:
             "url(" +
             (image
-              ? image
-              : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Aboriginal_Art_Australia%281%29.jpg/1280px-Aboriginal_Art_Australia%281%29.jpg") +
+              ? '/images/cartoon/' + image
+              : '/images/cartoon/placeholder.jpg') +
             ")"
         }}
       />

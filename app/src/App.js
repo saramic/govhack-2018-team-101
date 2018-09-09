@@ -28,6 +28,7 @@ const App = props => (
         <Route exact path="/" component={Home} />
         <Route path="/view/:stories" component={ConnectedViewStoryApp} />
         <Route path="/view" component={ConnectedViewStoryApp} />
+        <Route path="/all" component={ConnectedViewStoryApp} />
         <Route path="/credits" component={Credits} />
       </Switch>
     </Router>

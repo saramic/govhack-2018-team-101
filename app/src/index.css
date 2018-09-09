@@ -48,6 +48,10 @@ h1 {
   max-width: 100%;
 }
 
+.story-panel .add {
+  text-decoration: none;
+}
+
 .story-panel .add.icon {
   font-size: 120px;
 }

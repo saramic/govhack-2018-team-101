@@ -13,3 +13,17 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.home-panel h1 {
+    font-size: 36pt;
+}
+
+.home-panel .subtitle {
+    font-size: 18pt
+}
+
+.home-panel .ant-btn {
+    font-size: 18pt;
+    padding: 12px 28px;
+    height: auto;
+}

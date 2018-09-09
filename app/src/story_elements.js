@@ -81,7 +81,7 @@ const storyElements = {
       image: "",
       dataSource: {
         name: 'LCA kerbside recycling calculator',
-        hackerspace_id: null,
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/274',
         link: 'https://www.data.vic.gov.au/data/dataset/lca-kerbside-recycling-calculator',
         visualisation: 'N/A',
       },

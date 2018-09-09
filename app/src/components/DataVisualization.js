@@ -9,23 +9,17 @@ const DataVisualization = ({ data }) => {
         <img src={"/images/viz/" + data.visualisation} />
       ) : null}
 
-      <p>{data.name}</p>
-      <p>
-        <a href={data.hackerspace_id} target="_blank">
-          Hackerspace dataset
-        </a>
-      </p>
+      <h1>{data.name}</h1>
       <p>
         <a href={data.link} target="_blank">
-          Link to data
+          Original Data Source
         </a>
       </p>
-
-      {/* <Modal
-        title={null}
-        visible={}
-        footer={null}
-      >IMAGE HERE</Modal> */}
+      <p>
+        <a href={data.hackerspace_id} target="_blank">
+          GovHack 2018 Hackerspace Info
+        </a>
+      </p>
     </div>
   );
 };

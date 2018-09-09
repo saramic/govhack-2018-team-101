@@ -16,6 +16,8 @@ const ConnectedViewStoryApp = connect(
     onStart: actions.startStory,
     acceptStoryAction: actions.acceptStoryAction,
     onCloseAddStoryPanel: actions.closeAddStoryPanel,
+    onShowDataDialog: actions.showDataDialog,
+    onHideDataDialog: actions.hideDataDialog,
   }
 )(ViewStoryApp);
 

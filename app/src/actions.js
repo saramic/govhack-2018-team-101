@@ -21,3 +21,11 @@ export const acceptStoryAction = id => {
 export const startStory = serializedStory => {
   return { type: "START_STORY", serializedStory };
 };
+
+export const showDataDialog = id => {
+  return { type: "SHOW_DATA_DIALOG", id };
+};
+
+export const hideDataDialog = () => {
+  return { type: "HIDE_DATA_DIALOG" };
+};

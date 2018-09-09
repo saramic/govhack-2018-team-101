@@ -4,6 +4,7 @@ import { Row, Col, Button, Modal, Icon } from "antd";
 import { Link } from "react-router-dom";
 import AddStoryPanel from "./components/AddStoryPanel";
 import * as actions from "./actions";
+import DataVisualization from "./components/DataVisualization";
 
 const ViewStoryApp = props => (
   <div className="App">
@@ -89,9 +90,22 @@ class Story extends Component {
                 className="story-panel-info"
                 shape="circle"
                 icon="question"
+                onClick={() => this.props.onShowDataDialog(storyPanel.id)}
               />
             </Col>
           ))}
+
+          {this.props.dataDialog == null ? null :
+            <Modal
+              title={null}
+              visible={true}
+              className="data-viz-modal story-modal"
+              footer={null}
+              onCancel={this.props.onHideDataDialog}
+            >
+              <DataVisualization data={this.props.storyElements.find(e => e.id === this.props.dataDialog).dataSource} />
+            </Modal>
+          }
 
           {!this.props.published ? (
             <Col span={3}>

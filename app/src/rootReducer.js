@@ -7,6 +7,11 @@ const defaultState = {
   proposedStoryAddition: null,
 
   /**
+   * The id of the storyElement for which we want to show a dialog with the data behind it.
+   */
+  dataDialog: null,
+
+  /**
    * storyElements is a directed graph of all the paths a story could potentially take, like a "choose your own adventure".
    *
    * Example story building exercise, to illustrate the data structure below:
@@ -83,7 +88,7 @@ const showNewProposedStoryPanel = (state, excludeId = null) => {
 
 const reducer = (state = defaultState, action) => {
 
-  if (action.type == "START_STORY") {
+  if (action.type === "START_STORY") {
     // console.log(action.serializedStory.split(","));
     const ids = action.serializedStory.split(",");
     console.log("ids ", ids);
@@ -96,6 +101,14 @@ const reducer = (state = defaultState, action) => {
         };
       })
     });
+  } else if (action.type === "SHOW_DATA_DIALOG") {
+
+    return Object.assign({}, state, {dataDialog: action.id});
+
+  } else if (action.type === "HIDE_DATA_DIALOG") {
+
+    return Object.assign({}, state, {dataDialog: null});
+
   } else if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
 
     return Object.assign({}, state, {proposedStoryAddition: showNewProposedStoryPanel(state)});

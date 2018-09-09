@@ -108,8 +108,8 @@ const storyElements = {
       image: "https://i.pinimg.com/originals/a7/9f/18/a79f18003de9b41dc90361e97ffa835a.jpg",
       dataSource: {
         name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/346',
+        link: 'https://www.aihw.gov.au/reports/older-people/older-australia-at-a-glance/contents/summary',
         visualisation: 'N/A',
       },
       nextElements: [
@@ -131,7 +131,7 @@ const storyElements = {
     {
       id: "graffiti",
       template: "I want to be artistic and graffiti a mural",
-      image: "https://www.google.com.au/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjPxMK4h6vdAhWPbN4KHRu-AHkQjRx6BAgBEAU&url=https%3A%2F%2Fwww.thefactsite.com%2F2017%2F10%2Fgraffiti-facts.html&psig=AOvVaw3z7IGWQEHmRc1sxchH1Ys1&ust=1536484065468492",
+      image: "https://www.thefactsite.com/wp-content/uploads/2017/10/graffiti-facts.jpg",
       dataSource: {
           name: 'Crime Stats Agency',
           hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/300',
@@ -209,8 +209,8 @@ const storyElements = {
       image: "https://cdn.newsapi.com.au/image/v1/6de41d261846a75fee88dcf92a67efc9",
       dataSource: {
         name: '',
-        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/ ???',
-        link: '',
+        hackerspace_id: 'https://2018.hackerspace.govhack.org/data_sets/354',
+        link: 'https://www.aihw.gov.au/reports-statistics/health-welfare-services/indigenous-health-welfare-services/data',
         visualisation: 'N/A',
       },
       nextElements: [],

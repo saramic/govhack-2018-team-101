@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Row, Col, Button } from "antd";
-import { withRouter } from "react-router-dom";
 import AddStoryPanel from "./components/AddStoryPanel";
+import * as actions from "./actions";
 
 const ViewStoryApp = props => (
   <div className="App">
@@ -15,7 +15,10 @@ const Story = ({
   character,
   location,
   storyPanels,
-  acceptStoryAction
+  proposedStoryAddition,
+  onShowProposedStoryPanel,
+  onAcceptProposedStoryPanel,
+  onRejectProposedStoryPanel
 }) => {
   // Given a particular panel (with an ID reference to a story element), lookup the corresponding
   // story element from the list available to us.
@@ -100,22 +103,24 @@ const Story = ({
 
         <Col span={3}>
           <AddStoryPanel
-            onDeclineStory={() => {}}
-            onAcceptStory={id => acceptStoryAction(id)}
-            nextBestSegue={nextBestSegue}
-            nextPanel={nextBestPanel}
+            proposedStoryAddition={proposedStoryAddition}
+            onShowProposedStoryPanel={onShowProposedStoryPanel}
+            onRejectProposedStoryPanel={onRejectProposedStoryPanel}
+            onAcceptProposedStoryPanel={(customText = null, stickers = null) =>
+              onAcceptProposedStoryPanel()
+            }
           />
         </Col>
-
-        <Button
-          className="share-button"
-          type="primary"
-          shape="circle"
-          icon="share-alt"
-          size="large"
-          href={"/view/?panels=" + storyPanels.map(panel => panel.id).join(",")}
-        />
       </Row>
+
+      <Button
+        className="share-button"
+        type="primary"
+        shape="circle"
+        icon="share-alt"
+        size="large"
+        href={"/view/?panels=" + storyPanels.map(panel => panel.id).join(",")}
+      />
     </div>
   );
 };

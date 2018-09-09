@@ -5,28 +5,24 @@ import "../Story.css";
 import CardDataSource from "./CardDataSource";
 import {StoryPanel} from '../ViewStoryApp';
 
-const Card = ({ visible, onAcceptStory, closeModal, nextBestSegue, nextPanel}) => {
+const Card = ({ visible, data, closeModal, onAcceptProposedStoryPanel, proposedStoryAddition }) => {
   return (
     <div className={visible ? "card" : "card card--back"}>
 
       <div className="card__side card__front">
-        <StoryPanel image={nextPanel() ? nextPanel().image : ''} panelType={0} segue={null} template={nextBestSegue()} />
+        <StoryPanel image={proposedStoryAddition ? proposedStoryAddition.image : ''} panelType={0} segue={null} template={""} />
       </div>
 
       <div className="card__back">
 
-        <StoryPanel image={nextPanel() ? nextPanel().image : ''} panelType={0} segue={null} template={nextPanel() ? nextPanel().template : ''} />
+        <StoryPanel image={proposedStoryAddition ? proposedStoryAddition.image : ''} panelType={0} segue={null} template={proposedStoryAddition ? proposedStoryAddition.template : ''} />
 
         <div className="card__data">
           <p>Test</p>
 
           <CardDataSource />
 
-          <Button onClick={() => {
-            onAcceptStory(nextPanel() ? nextPanel().id : 'school')
-            closeModal()
-          }
-          }>Submit</Button>
+          <Button onClick={onAcceptProposedStoryPanel}>Submit</Button>
         </div>
       </div>
     </div>
@@ -34,17 +30,10 @@ const Card = ({ visible, onAcceptStory, closeModal, nextBestSegue, nextPanel}) =
 };
 
 export default class AddStoryPanel extends Component {
-  state = { visible: false, frontShown: true };
-
-  showForm = () => {
-    this.setState({
-      visible: true
-    });
-  };
+  state = { frontShown: true };
 
   hideForm = () => {
     this.setState({
-      visible: false,
       frontShown: true
     });
   };
@@ -54,7 +43,7 @@ export default class AddStoryPanel extends Component {
   };
 
   showNextStory = () => {
-    console.log("SHOW NEXT STORY IN QUEUE");
+    this.props.onRejectProposedStoryPanel();
   };
 
   render = () => {
@@ -64,7 +53,7 @@ export default class AddStoryPanel extends Component {
           href="#new-panel"
           onClick={e => {
             e.preventDefault();
-            this.showForm();
+            this.props.onShowProposedStoryPanel();
           }}
         >
           <div className="content">
@@ -74,7 +63,7 @@ export default class AddStoryPanel extends Component {
         </a>
         <Modal
           title={null}
-          visible={this.state.visible}
+          visible={this.props.proposedStoryAddition != null}
           onOk={this.hideForm}
           onCancel={this.hideForm}
           className="story-modal"
@@ -83,9 +72,9 @@ export default class AddStoryPanel extends Component {
           <Card
             visible={this.state.frontShown}
             closeModal={this.hideForm}
-            onAcceptStory={this.props.onAcceptStory}
-            nextBestSegue={this.props.nextBestSegue}
-            nextPanel={this.props.nextPanel}/>
+            proposedStoryAddition={this.props.proposedStoryAddition}
+            onAcceptProposedStoryPanel={this.props.onAcceptProposedStoryPanel}
+          />
 
           {this.state.frontShown ? (
             <div>

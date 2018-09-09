@@ -5,6 +5,8 @@ const defaultState = {
   location: "Kingston",
   character: "Matilda",
 
+  proposedStoryAddition: null,
+
   /**
    * storyElements is a directed graph of all the paths a story could potentially take, like a "choose your own adventure".
    *
@@ -45,29 +47,48 @@ const defaultState = {
 };
 
 const reducer = (state = defaultState, action) => {
+
   if (action.type === "SHOW_PROPOSED_STORY_PANEL") {
+
+    // TODO: Correctly limit results to those allowed by the `nextElements` thing.
     // const lastStoryItem = state.storyPanels.length === 0 ? null : state.storyPanels[state.storyPanels.length - 1];
     // const potentialNextStories = lastStoryItem === null ? state.storyElements :
 
-    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1), 10)];
+    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
+
+    return Object.assign({}, state, {proposedStoryAddition: newElement});
+
+  } else if (action.type === "REJECT_PROPOSED_STORY_PANEL") {
+
+    const newElement = state.storyElements[parseInt(Math.random() * (state.storyElements.length - 1))];
+    return Object.assign({}, state, {proposedStoryAddition: newElement});
+
+  } else if (action.type === "ACCEPT_PROPOSED_STORY_PANEL") {
+
+    const newElement = state.proposedStoryAddition;
     const newPanel = Object.assign({}, newElement, {panelType: Math.round(Math.random() * 3)});
 
     return Object.assign({}, state, {
+      proposedStoryAddition: null,
       storyPanels: state.storyPanels.concat(newPanel)
     });
-  }
-  if (action.type === 'ACCEPT_STORY') {
+
+  } else if (action.type === 'ACCEPT_STORY') {
+
     const storyPanel = state.storyElements.filter((storyElement) => (storyElement.id === action.id))[0]
+
     const newStoryPanel = {
       id: storyPanel.id,
-      panelType: 2,
-    }
+      panelType: Math.round(Math.random() * 3),
+    };
+
     const stories = state.storyPanels.concat(newStoryPanel);
     return Object.assign({}, state, {
       storyPanels: stories
     });
   }
   return state;
+
 };
 
 export default reducer;

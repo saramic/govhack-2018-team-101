@@ -3,6 +3,9 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+body, .ant-modal-content {
   background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=fcfaf7ff&noise=e6ddd6&density=22&opacity=38');
 }
 
@@ -130,7 +133,7 @@ h1 {
 }
 
 .story-panel-2 .text {
-  max-width: 30%;
+  max-width: 35%;
   height: 100%;
   background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57')
 }
@@ -152,7 +155,7 @@ h1 {
 }
 
 .story-panel-3 .text {
-  max-width: 30%;
+  max-width: 35%;
   height: 100%;
   background-image: url('http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=e3e1e0&density=36&opacity=57')
 }

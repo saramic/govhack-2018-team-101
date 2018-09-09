@@ -1,43 +1,8 @@
-// 8 cards
-// 1) School - Michael
-//    I am at school
-//
-// 3) sport recreation - Selena
-//    segue - I to play soccer at the local park
-//    I am at the local park and I see
-//    At the local park I saw people playing various sports
-
-//    Kingston Heath Reserve on Farm Road, HEATHERTON 3202, Grass Soccer Field, facility is 0-5 years old, 5* rated facility, with Unisex and Umpire/Offical change rooms
-//    9 soccer field locations in Kingston, 8 of which are offering grass fields
-
-// 4) recycling - Adam
-//    segue -
-//    I saw some rubbish so I picked it up and put it into recycling
-//
-// 6) Aging young vs old - Adam
-//    An elderly gentleman thanked me with an italian accent
-//
-// *) Reject Graffiti - Selena
-//    Crime stats https://2018.hackerspace.govhack.org/data_sets/300
-
-// *) Reject Trees - Michael
-//
-// 2) multiculturalism - Michael
-//    Italians came on the boats in 1940's data
-//
-// 7) Gender equality - Michael
-//
-// 5) profession - Selena
-//    Fire Fighters have an 8.6% projected growth in next 5 years in Australia
-//
-// 8) Indiginous - Adam
-//
-
 const storyElements = {
   storyElements: [
     {
       id: "school",
-      template: "You are at Parkdale Primary School",
+      template: "You are at Parkdale Primary School...",
       image:
         "http://www.parkdaleps.vic.edu.au/uploaded_files/media/gallery/parkdale_primary_201527_crop.jpg",
       dataSource: {
@@ -61,7 +26,7 @@ const storyElements = {
     },
     {
       id: "sport-recreation",
-      template: "I am playing soccer at Kingston Heath Reserve",
+      template: "You are playing soccer at Kingston Heath Reserve...",
       image: "http://suhc.com.au/wp-content/uploads/HinHockey-1-2014.jpg",
       dataSource: {
         name: "Sport and Recreation",
@@ -118,7 +83,7 @@ const storyElements = {
         hackerspace_id: "https://2018.hackerspace.govhack.org/data_sets/346",
         link:
           "https://www.aihw.gov.au/reports/older-people/older-australia-at-a-glance/contents/summary",
-        visualisation: "multiculturalism.gif" // in viz
+        visualisation: null
       },
       nextElements: [
         // TODO these don't work as we do not support unhappy path (ie no nextElements for grafitti & trees)
@@ -132,7 +97,7 @@ const storyElements = {
         // },
         {
           id: "multiculturalism",
-          segue: "segue to multiculturalism"
+          segue: "Australians come from many different backgrounds..."
         }
       ]
     },
@@ -178,7 +143,7 @@ const storyElements = {
       nextElements: [
         {
           id: "gender-equality",
-          segue: "segue to gender-equality"
+          segue: "Are women and men treated as equals in this country?"
         }
       ]
     },

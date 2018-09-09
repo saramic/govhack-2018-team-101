@@ -28,7 +28,9 @@ const Card = ({
     <div className={visible ? "card" : "card card--back"}>
       <div className="card__side card__front">
         <StoryPanel
-          image={proposedStoryAddition ? proposedStoryAddition.image : ""}
+          image={
+            proposedStoryAddition ? proposedStoryAddition.id + ".jpg" : null
+          }
           panelType={0}
           segue={null}
           template={segue}
@@ -37,7 +39,9 @@ const Card = ({
 
       <div className="card__back">
         <StoryPanel
-          image={proposedStoryAddition ? proposedStoryAddition.image : ""}
+          image={
+            proposedStoryAddition ? proposedStoryAddition.id + ".jpg" : null
+          }
           panelType={0}
           segue={null}
           template={proposedStoryAddition ? proposedStoryAddition.template : ""}

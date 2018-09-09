@@ -5,7 +5,7 @@ const DataVisualization = ({ data }) => {
   console.log(data);
   return (
     <div>
-      <img src="#" />
+      <img src="" />
 
       <p>{data.name}</p>
       <p>

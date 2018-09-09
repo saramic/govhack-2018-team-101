@@ -148,13 +148,14 @@ class Story extends Component {
           <Button
             className="share-button"
             type="primary"
-            shape="circle"
             icon="share-alt"
             size="large"
             href={
               "/view/" + this.props.storyPanels.map(panel => panel.id).join(",")
             }
-          />
+          >
+            Share my story
+          </Button>
         ) : null}
       </div>
     );

@@ -5,6 +5,7 @@
   * [My Local Story - my-local-story.herokuapp.com](https://my-local-story.herokuapp.com/)
   * [My Local Story - GovHack Hackerspace](https://2018.hackerspace.govhack.org/projects/my_local_story)
   * [My Local Story - YouTube submission](https://youtu.be/1fSzIIYlJRk)
+    * https://youtu.be/1fSzIIYlJRk
 
 
 ## Talk

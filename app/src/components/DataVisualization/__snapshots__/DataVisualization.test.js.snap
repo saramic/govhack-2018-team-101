@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataVisualization should render correctly WITH visualization image 1`] = `
+<div
+  className="visualization"
+>
+  <img
+    src="/images/viz/the_image_url"
+  />
+  <h1>
+    The Data Name
+  </h1>
+  <p>
+    <a
+      href="http://data.source/link"
+      target="_blank"
+    >
+      Original Data Source
+    </a>
+  </p>
+  <p>
+    <a
+      href="999"
+      target="_blank"
+    >
+      GovHack 2018 Hackerspace Info
+    </a>
+  </p>
+</div>
+`;
+
+exports[`DataVisualization should render correctly WITHOUT visualization image 1`] = `
+<div
+  className="visualization"
+>
+  <h1>
+    The Data Name
+  </h1>
+  <p>
+    <a
+      href="http://data.source/link"
+      target="_blank"
+    >
+      Original Data Source
+    </a>
+  </p>
+  <p>
+    <a
+      href="999"
+      target="_blank"
+    >
+      GovHack 2018 Hackerspace Info
+    </a>
+  </p>
+</div>
+`;

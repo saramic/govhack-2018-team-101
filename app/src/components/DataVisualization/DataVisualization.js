@@ -1,14 +1,11 @@
 import React from "react";
-import { Modal, Button } from "antd";
 
 const DataVisualization = ({ data }) => {
-  console.log(data);
   return (
     <div className="visualization">
       {data.visualisation ? (
         <img src={"/images/viz/" + data.visualisation} />
       ) : null}
-
       <h1>{data.name}</h1>
       <p>
         <a href={data.link} target="_blank">
